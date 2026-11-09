@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NICOLA VIANELLO — Darkroom Contact-Sheet CMS // Fotografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- TOP COMMAND HEADER -->
+  <header class="cms-header">
+    <div class="cms-brand">
+      <span class="brand-led" id="server-led"></span>
+      <div>
+        <div class="brand-title">NICOLA VIANELLO // DARKROOM ARCHIVE CMS</div>
+        <div class="brand-sub" id="server-status-text">Connessione al server locale...</div>
+      </div>
+    </div>
+
+    <div class="cms-stats" id="cms-stats-bar">
+      <div class="stat-chip">
+        <span class="stat-label">SCATTI TOTALI</span>
+        <strong class="stat-val" id="stat-total">0</strong>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-label">FILTRATI</span>
+        <strong class="stat-val" id="stat-filtered">0</strong>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-label">SELEZIONATI</span>
+        <strong class="stat-val" id="stat-selected">0</strong>
+      </div>
+    </div>
+
+    <div class="cms-actions">
+      <button class="btn btn-secondary" id="btn-open-upload" title="Carica nuove foto nella cartella FOTO/">
+        <span>⬆ CARICA FOTO</span>
+      </button>
+      <button class="btn btn-secondary" id="btn-rescan" title="Scansiona la cartella FOTO/ per rilevare nuovi file aggiunti dal Finder">
+        <span>🔄 SINCRONIZZA FOTO/</span>
+      </button>
+      <button class="btn btn-secondary" id="btn-export-js" title="Scarica manualmente il file photos-data.js">
+        <span>⬇ ESPORTA .JS</span>
+      </button>
+      <button class="btn btn-primary" id="btn-save-all" title="Salva tutte le modifiche in photos-data.js (Cmd/Ctrl + S)">
+        <span>💾 SALVA ARCHIVIO</span>
+      </button>
+      <button class="btn btn-git" id="btn-git-sync" title="Esegui commit e push su GitHub">
+        <span>☁ GITHUB SYNC</span>
+      </button>
+      <a href="index.html" target="_blank" class="btn btn-live">
+        <span>👁 SITO LIVE ↗</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- FILTER & CATEGORY BAR -->
+  <section class="cms-toolbar">
+    <div class="toolbar-left">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search-input" placeholder="Cerca per nome file (es. DSCF1249), #ID, titolo, ottica, pellicola..." />
+        <button class="search-clear" id="btn-clear-search" title="Pulisci ricerca">×</button>
+      </div>
+
+      <div class="cat-pills" id="category-filter-pills">
+        <!-- Populated dynamically by admin.js -->
+      </div>
+      <button class="btn-add-cat" id="btn-add-category" title="Aggiungi una nuova categoria">+ CATEGORIA</button>
+    </div>
+
+    <div class="toolbar-right">
+      <select id="orientation-filter" class="cms-select" title="Filtra per orientamento">
+        <option value="ALL">Tutti i Formati</option>
+        <option value="landscape">Landscape (Orizzontale)</option>
+        <option value="portrait">Portrait (Verticale)</option>
+        <option value="panoramic">Panoramic (Wide)</option>
+        <option value="square">Square (Quadrato)</option>
+      </select>
+
+      <select id="grid-size-select" class="cms-select" title="Dimensione miniature provino">
+        <option value="medium">Provino Medio</option>
+        <option value="compact">Provino Compatto (8 col)</option>
+        <option value="large">Provino Grande (Loupe)</option>
+        <option value="list">Vista Tabella</option>
+      </select>
+
+      <button class="btn btn-ghost" id="btn-select-visible" title="Seleziona o deseleziona tutti gli scatti visibili">
+        ☑ Seleziona Visibili
+      </button>
+    </div>
+  </section>
+
+  <!-- BATCH OPERATIONS BAR (Shown when >= 1 photos selected) -->
+  <section class="batch-bar" id="batch-bar" hidden>
+    <div class="batch-info">
+      <strong id="batch-count-label">0 scatti selezionati</strong>
+      <button class="btn-link" id="btn-clear-selection">Deseleziona tutto</button>
+    </div>
+    <div class="batch-controls">
+      <span class="batch-label">ASSEGNA CATEGORIA IN BLOCCO:</span>
+      <div class="batch-cat-buttons" id="batch-cat-buttons"></div>
+
+      <span class="batch-divider">|</span>
+
+      <select id="batch-stock-select" class="cms-select">
+        <option value="">Pellicola in blocco...</option>
+        <option value="KODAK TRI-X 400 // 35MM">KODAK TRI-X 400 // 35MM</option>
+        <option value="ILFORD HP5 PLUS // 120MM">ILFORD HP5 PLUS // 120MM</option>
+        <option value="FUJIFILM PRO NEG. HI // 35MM EQ">FUJIFILM PRO NEG. HI // 35MM EQ</option>
+        <option value="CINESTILL 800T // HALATION">CINESTILL 800T // HALATION</option>
+        <option value="KODAK PORTRA 400 // DAYLIGHT">KODAK PORTRA 400 // DAYLIGHT</option>
+        <option value="ILFORD DELTA 3200 // PUSH +2">ILFORD DELTA 3200 // PUSH +2</option>
+        <option value="KODAK EKTAR 100 // HIGH SAT">KODAK EKTAR 100 // HIGH SAT</option>
+        <option value="FUJIFILM ACROS 100 II // ORTHO">FUJIFILM ACROS 100 II // ORTHO</option>
+      </select>
+
+      <button class="btn btn-ghost" id="btn-batch-move-top" title="Sposta gli scatti selezionati all'inizio del portfolio">
+        ⇈ Sposta in Cima
+      </button>
+      <button class="btn btn-danger-outline" id="btn-batch-delete" title="Rimuovi gli scatti selezionati dall'archivio">
+        🗑 Rimuovi Selezionati
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN WORKSPACE: CONTACT SHEET GRID + RIGHT LOUPE INSPECTOR -->
+  <main class="cms-workspace">
+    <!-- LEFT: CONTACT SHEET -->
+    <section class="contact-sheet-panel" id="contact-sheet-panel">
+      <div class="contact-sheet-grid medium" id="contact-sheet-grid">
+        <!-- Rendered by admin.js -->
+      </div>
+    </section>
+
+    <!-- RIGHT: DARKROOM LOUPE & EXIF INSPECTOR -->
+    <aside class="inspector-panel" id="inspector-panel">
+      <div class="inspector-empty" id="inspector-empty">
+        <div class="empty-reticle">⊕</div>
+        <h3>LOUPE DI ISPEZIONE</h3>
+        <p>Clicca su un fotogramma nel provino a contatto per modificarne categoria, posizione, titolo, dati EXIF o pellicola.</p>
+        <p class="empty-hint">Suggerimento: puoi anche cambiare categoria direttamente con 1 clic sui pulsanti <code>NAT / PAR / SOG / ANI / AST</code> sotto ogni miniatura.</p>
+      </div>
+
+      <div class="inspector-content" id="inspector-content" hidden>
+        <div class="inspector-header">
+          <div>
+            <span class="insp-id" id="insp-id">#001</span>
+            <span class="insp-filename" id="insp-filename">DSCF0000.JPG</span>
+          </div>
+          <div class="insp-nav-btns">
+            <button class="btn-icon" id="btn-prev-photo" title="Scatto precedente (Freccia Su/Sinistra)">←</button>
+            <button class="btn-icon" id="btn-next-photo" title="Scatto successivo (Freccia Giù/Destra)">→</button>
+          </div>
+        </div>
+
+        <!-- PREVIEW VIEWPORT -->
+        <div class="insp-preview-wrap" id="insp-preview-wrap">
+          <img id="insp-img" src="" alt="Anteprima scatto" />
+          <div class="insp-preview-badges">
+            <span class="badge" id="insp-dims-badge">0 × 0 PX</span>
+            <span class="badge" id="insp-ratio-badge">1.50:1</span>
+            <span class="badge" id="insp-orient-badge">LANDSCAPE</span>
+          </div>
+        </div>
+
+        <!-- ORDER & POSITION CONTROLS -->
+        <div class="insp-section">
+          <div class="insp-section-title">01 // ORDINAMENTO E POSIZIONE</div>
+          <div class="pos-controls-row">
+            <div class="pos-input-group">
+              <label for="inp-position">Posizione #</label>
+              <input type="number" id="inp-position" min="1" step="1" class="cms-input" />
+              <button class="btn btn-secondary btn-sm" id="btn-apply-pos">Vai</button>
+            </div>
+            <div class="pos-quick-btns">
+              <button class="btn btn-ghost btn-sm" id="btn-move-first" title="Porta in prima posizione">⇈ Cima</button>
+              <button class="btn btn-ghost btn-sm" id="btn-move-up" title="Sposta indietro di 1">↑ Su</button>
+              <button class="btn btn-ghost btn-sm" id="btn-move-down" title="Sposta avanti di 1">↓ Giù</button>
+              <button class="btn btn-ghost btn-sm" id="btn-move-last" title="Porta in fondo">⇊ Fondo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY & CURATORIAL DATA -->
+        <div class="insp-section">
+          <div class="insp-section-title">02 // CATEGORIA E CURATELA</div>
+
+          <label class="field-label">Categoria Assegnata</label>
+          <div class="insp-cat-selector" id="insp-cat-selector">
+            <!-- Category buttons injected by admin.js -->
+          </div>
+
+          <div class="field-row">
+            <div class="field-col">
+              <label class="field-label" for="inp-title">Titolo / Didascalia (Opzionale)</label>
+              <input type="text" id="inp-title" class="cms-input" placeholder="Es. Laguna Notturna, Venezia 2025..." />
+            </div>
+          </div>
+
+          <div class="field-row two-cols">
+            <div class="field-col">
+              <label class="field-label" for="inp-frame">Codice Fotogramma</label>
+              <input type="text" id="inp-frame" class="cms-input" placeholder="FRM // 001" />
+            </div>
+            <div class="field-col">
+              <label class="field-label" for="inp-orientation">Taglio / Orientamento</label>
+              <select id="inp-orientation" class="cms-select full-width">
+                <option value="landscape">Landscape (Orizzontale)</option>
+                <option value="portrait">Portrait (Verticale)</option>
+                <option value="panoramic">Panoramic (Wide 16:9+)</option>
+                <option value="square">Square (1:1)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALOG FILM & EXIF METADATA -->
+        <div class="insp-section">
+          <div class="insp-section-title">03 // METADATI PELLICOLA &amp; EXIF</div>
+
+          <div class="field-col">
+            <label class="field-label" for="inp-stock">Emulsione / Film Stock</label>
+            <input type="text" id="inp-stock" class="cms-input" placeholder="KODAK TRI-X 400 // 35MM" />
+            <div class="preset-chips" id="preset-stocks">
+              <button type="button" class="chip" data-val="KODAK TRI-X 400 // 35MM">Tri-X 400</button>
+              <button type="button" class="chip" data-val="ILFORD HP5 PLUS // 120MM">HP5 Plus</button>
+              <button type="button" class="chip" data-val="FUJIFILM PRO NEG. HI // 35MM EQ">Fuji Pro Neg</button>
+              <button type="button" class="chip" data-val="CINESTILL 800T // HALATION">CineStill 800T</button>
+              <button type="button" class="chip" data-val="KODAK PORTRA 400 // DAYLIGHT">Portra 400</button>
+              <button type="button" class="chip" data-val="ILFORD DELTA 3200 // PUSH +2">Delta 3200</button>
+              <button type="button" class="chip" data-val="KODAK EKTAR 100 // HIGH SAT">Ektar 100</button>
+              <button type="button" class="chip" data-val="FUJIFILM ACROS 100 II // ORTHO">Acros 100 II</button>
+            </div>
+          </div>
+
+          <div class="field-row three-cols">
+            <div class="field-col">
+              <label class="field-label" for="inp-lens">Ottica (Lens)</label>
+              <input type="text" id="inp-lens" class="cms-input" placeholder="35MM F/1.4" />
+            </div>
+            <div class="field-col">
+              <label class="field-label" for="inp-shutter">Otturatore</label>
+              <input type="text" id="inp-shutter" class="cms-input" placeholder="1/500s" />
+            </div>
+            <div class="field-col">
+              <label class="field-label" for="inp-iso">Sensibilità ISO</label>
+              <input type="text" id="inp-iso" class="cms-input" placeholder="ISO 400" />
+            </div>
+          </div>
+
+          <div class="preset-chips" id="preset-lenses">
+            <button type="button" class="chip" data-lens="23MM F/2.0">23mm f/2</button>
+            <button type="button" class="chip" data-lens="28MM F/2.8">28mm f/2.8</button>
+            <button type="button" class="chip" data-lens="35MM F/1.4">35mm f/1.4</button>
+            <button type="button" class="chip" data-lens="50MM F/1.2">50mm f/1.2</button>
+            <button type="button" class="chip" data-lens="56MM F/1.2">56mm f/1.2</button>
+            <button type="button" class="chip" data-lens="85MM F/1.8">85mm f/1.8</button>
+          </div>
+        </div>
+
+        <!-- FILE REPLACEMENT & DANGER ZONE -->
+        <div class="insp-section insp-danger-zone">
+          <div class="insp-section-title">04 // GESTIONE FILE SORGENTE</div>
+          <div class="file-path-box">
+            <span>Percorso:</span>
+            <code id="insp-src-path">FOTO/DSCF0000.JPG</code>
+          </div>
+          <div class="danger-actions">
+            <label class="btn btn-secondary btn-sm file-replace-label">
+              <span>🔄 Sostituisci File JPG/PNG</span>
+              <input type="file" id="inp-replace-file" accept=".jpg,.jpeg,.png,.webp" hidden />
+            </label>
+            <button type="button" class="btn btn-danger btn-sm" id="btn-delete-single">
+              🗑 Rimuovi Scatto
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- MULTI-PHOTO UPLOAD MODAL -->
+  <div class="cms-modal-backdrop" id="upload-modal" hidden>
+    <div class="cms-modal">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker">SVILUPPO NUOVI RULLINI // UPLOAD MULTIPLO</span>
+          <h2>Carica Nuovi Scatti in <code>FOTO/</code></h2>
+        </div>
+        <button class="modal-close" id="btn-close-upload">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="upload-options-row">
+          <div class="field-col">
+            <label class="field-label" for="upload-category-select">Categoria Predefinita per i Nuovi Scatti</label>
+            <select id="upload-category-select" class="cms-select full-width"></select>
+          </div>
+          <div class="field-col">
+            <label class="field-label" for="upload-stock-select">Pellicola / Emulsione (Opzionale)</label>
+            <select id="upload-stock-select" class="cms-select full-width">
+              <option value="">Automatica (in base allo scatto)</option>
+              <option value="KODAK TRI-X 400 // 35MM">KODAK TRI-X 400 // 35MM</option>
+              <option value="ILFORD HP5 PLUS // 120MM">ILFORD HP5 PLUS // 120MM</option>
+              <option value="FUJIFILM PRO NEG. HI // 35MM EQ">FUJIFILM PRO NEG. HI // 35MM EQ</option>
+              <option value="CINESTILL 800T // HALATION">CINESTILL 800T // HALATION</option>
+              <option value="KODAK PORTRA 400 // DAYLIGHT">KODAK PORTRA 400 // DAYLIGHT</option>
+              <option value="ILFORD DELTA 3200 // PUSH +2">ILFORD DELTA 3200 // PUSH +2</option>
+            </select>
+          </div>
+          <div class="field-col">
+            <label class="field-label" for="upload-position-select">Inserimento nell'Archivio</label>
+            <select id="upload-position-select" class="cms-select full-width">
+              <option value="prepend">All'inizio (In Cima al Portfolio)</option>
+              <option value="append">In fondo (Alla Fine del Portfolio)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="dropzone" id="upload-dropzone">
+          <input type="file" id="upload-file-input" accept=".jpg,.jpeg,.png,.webp" multiple hidden />
+          <div class="dropzone-icon">✦</div>
+          <div class="dropzone-title">Trascina qui le tue fotografie (.JPG, .PNG, .WEBP)</div>
+          <div class="dropzone-sub">oppure clicca per selezionare uno o più file dal tuo Mac. Risoluzione e orientamento verranno calcolati in automatico.</div>
+        </div>
+
+        <div class="upload-queue" id="upload-queue"></div>
+      </div>
+
+      <div class="modal-footer">
+        <span class="upload-status-msg" id="upload-status-msg">Nessun file in coda</span>
+        <div class="modal-footer-btns">
+          <button class="btn btn-ghost" id="btn-cancel-upload">Annulla</button>
+          <button class="btn btn-primary" id="btn-start-upload" disabled>⬆ Carica e Analizza Scatti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="cms-toast" id="cms-toast" hidden></div>
+
+  <!-- Load current manifest fallback for offline / file:// usage -->
+  <script src="photos-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

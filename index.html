@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="gallery">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NICOLA VIANELLO — PHOTOGRAPHY MANIFESTO &amp; ARCHIVE</title>
+  <meta name="description" content="Nicola Vianello — Photography Manifesto & Contact-Sheet Archive. Raw, analog, tactile visual archive." />
+
+  <!-- Google Fonts: Syne (Display) + Space Grotesk + IBM Plex Mono (Surgical Technical Typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       SVG FILTERS:
+       1. #rgb-split-filter — Chromatic Aberration / RGB Split micro-pulse on hover
+       2. #film-grain-filter — Animated Darkroom SVG noise overlay
+  ========================================================================== -->
+  <svg class="svg-defs" aria-hidden="true" width="0" height="0" style="position:absolute; width:0; height:0; overflow:hidden; pointer-events:none;">
+    <defs>
+      <!-- Chromatic Aberration / RGB Split Filter -->
+      <filter id="rgb-split-filter" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+        <!-- Extract Red Channel -->
+        <feColorMatrix type="matrix" in="SourceGraphic" result="red-ch"
+          values="1 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 1 0" />
+        <!-- Extract Green Channel -->
+        <feColorMatrix type="matrix" in="SourceGraphic" result="green-ch"
+          values="0 0 0 0 0
+                  0 1 0 0 0
+                  0 0 0 0 0
+                  0 0 0 1 0" />
+        <!-- Extract Blue Channel -->
+        <feColorMatrix type="matrix" in="SourceGraphic" result="blue-ch"
+          values="0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 1 0 0
+                  0 0 0 1 0" />
+
+        <!-- Dynamic Offsets controlled via JS / CSS animation on hover -->
+        <feOffset in="red-ch" dx="-5" dy="1.5" result="red-shift" id="rgb-red-offset" />
+        <feOffset in="green-ch" dx="0" dy="-1" result="green-shift" id="rgb-green-offset" />
+        <feOffset in="blue-ch" dx="5" dy="-1.5" result="blue-shift" id="rgb-blue-offset" />
+
+        <!-- Recombine Channels via Screen Blend -->
+        <feBlend mode="screen" in="red-shift" in2="green-shift" result="rg-blend" />
+        <feBlend mode="screen" in="rg-blend" in2="blue-shift" result="rgb-out" />
+      </filter>
+
+      <!-- Subtle Analog Film Grain Filter for Darkroom Mode -->
+      <filter id="film-grain-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" stitchTiles="stitch" result="noise" />
+        <feColorMatrix type="saturate" values="0" in="noise" result="mono-noise" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Animated Film Grain Overlay (Active in Darkroom Mode, opacity: 0.035, pointer-events: none) -->
+  <div class="film-grain-overlay" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <rect width="100%" height="100%" filter="url(#film-grain-filter)" />
+    </svg>
+  </div>
+
+  <!-- =========================================================================
+       FIXED VIEWFINDER HUD / NAVIGATION BAR
+  ========================================================================== -->
+  <header class="hud-navbar" id="hud-navbar">
+    <div class="hud-navbar__left">
+      <a href="#top" class="hud-brand" id="nav-brand-top">
+        <span class="hud-rec-dot" aria-hidden="true"></span>
+        <span class="hud-brand__name">N. VIANELLO</span>
+        <span class="hud-brand__code">// ARCHIVE_026</span>
+      </a>
+      <div class="hud-telemetry">
+        <span id="hud-scroll-counter">[ 001 / 188 ]</span>
+        <span class="hud-divider">|</span>
+        <span id="hud-velocity">VEL // 00.0</span>
+      </div>
+    </div>
+
+    <!-- DENSITY SLIDER (3 Viste in 1 con GSAP Flip) -->
+    <nav class="hud-density" aria-label="Selettore densità griglia">
+      <span class="hud-density__label">VIEWFINDER:</span>
+      <div class="hud-density__group" role="group">
+        <button type="button" class="density-btn" data-density="index" title="Vista Provino a Contatto (6-8 colonne)">
+          [ INDEX 8x ]
+        </button>
+        <button type="button" class="density-btn is-active" data-density="editorial" title="Default Masonry Editoriale (3-4 colonne)">
+          [ EDITORIAL 3x ]
+        </button>
+        <button type="button" class="density-btn" data-density="exhibition" title="Vista Monumentale da Galleria (1-2 colonne)">
+          [ EXHIBITION 2x ]
+        </button>
+      </div>
+    </nav>
+
+    <!-- DARKROOM / GALLERY MODE SWITCH -->
+    <div class="hud-navbar__right" style="display:flex; align-items:center; gap:10px;">
+      <a href="admin.html" class="darkroom-switch" title="Apri Darkroom Admin CMS" style="text-decoration:none;">
+        <span class="darkroom-switch__text">⚙ ADMIN CMS</span>
+      </a>
+      <button type="button" class="darkroom-switch" id="darkroom-toggle" aria-pressed="false" title="Commuta tra Gallery Paper e Darkroom Mode">
+        <span class="darkroom-switch__indicator"></span>
+        <span class="darkroom-switch__text" id="darkroom-toggle-label">DARKROOM // OFF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT WRAPPER
+  ========================================================================== -->
+  <main id="top" class="manifesto-main">
+
+    <!-- HERO / HEADER MANIFESTO -->
+    <section class="manifesto-hero">
+      <div class="manifesto-hero__meta-row">
+        <div class="meta-cell">
+          <span class="meta-label">CATALOGUE REF.</span>
+          <span class="meta-val">NV—MNFS // 35MM &amp; DIGITAL RAW</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">COORDINATES</span>
+          <span class="meta-val">45°26'23.0"N 12°19'55.0"E</span>
+        </div>
+        <div class="meta-cell">
+          <span class="meta-label">CONTACT SHEET</span>
+          <span class="meta-val" id="hero-total-count">[ 188 SELECTED FRAMES ]</span>
+        </div>
+        <div class="meta-cell meta-cell--right">
+          <span class="meta-label">OPTICAL STATUS</span>
+          <span class="meta-val meta-val--accent">● UNCROPPED / RAW EXPOSURE</span>
+        </div>
+      </div>
+
+      <div class="manifesto-hero__title-block">
+        <p class="manifesto-kicker">
+          <span>[ PHOTOGRAPHY MANIFESTO &amp; ARCHIVE ]</span>
+          <span class="manifesto-kicker__line"></span>
+          <span>SHEET NO. 01—08</span>
+        </p>
+        <h1 class="manifesto-title">
+          <span class="manifesto-title__row">NICOLA VIANELLO</span>
+          <span class="manifesto-title__sub">PHOTOGRAPHY MANIFESTO &amp; ARCHIVE</span>
+        </h1>
+      </div>
+
+      <div class="manifesto-hero__editorial">
+        <div class="editorial-statement">
+          <p class="editorial-lead">
+            La fotografia non è riproduzione asettica: è attrito ottico, grana d’argento, aberrazione controllata e memoria materica. Questo archivio raccoglie <strong><span id="editorial-count-inline">188</span> provini selezionati</strong> senza ritaglio forzato, preservando il rapporto d’aspetto nativo di ogni singola esposizione.
+          </p>
+        </div>
+        <div class="editorial-specs">
+          <div class="spec-row">
+            <span>ARCHIVE MODE</span>
+            <span id="spec-active-density">EDITORIAL 3X MASONRY</span>
+          </div>
+          <div class="spec-row">
+            <span>FILTERING</span>
+            <span id="spec-active-category">ALL FRAMES</span>
+          </div>
+          <div class="spec-row">
+            <span>INTERACTION</span>
+            <span>RGB MICRO-GLITCH // LIGHTBOX [ENTER]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STICKY / TACTILE FILTER BAR (CATEGORIES) -->
+      <div class="filter-bar" id="filter-bar">
+        <div class="filter-bar__label">
+          <span>FILTER ARCHIVE //</span>
+        </div>
+        <div class="filter-bar__buttons" id="category-filters" role="tablist" aria-label="Filtra fotografie per categoria">
+          <button type="button" class="filter-chip is-active" data-category="ALL" role="tab" aria-selected="true">
+            <span class="filter-chip__name">ALL</span>
+            <span class="filter-chip__count" data-count-for="ALL">231</span>
+          </button>
+          <button type="button" class="filter-chip" data-category="NATURA" role="tab" aria-selected="false">
+            <span class="filter-chip__name">NATURA</span>
+            <span class="filter-chip__count" data-count-for="NATURA">0</span>
+          </button>
+          <button type="button" class="filter-chip" data-category="PARTY" role="tab" aria-selected="false">
+            <span class="filter-chip__name">PARTY</span>
+            <span class="filter-chip__count" data-count-for="PARTY">0</span>
+          </button>
+          <button type="button" class="filter-chip" data-category="SOGGETTI" role="tab" aria-selected="false">
+            <span class="filter-chip__name">SOGGETTI</span>
+            <span class="filter-chip__count" data-count-for="SOGGETTI">0</span>
+          </button>
+          <button type="button" class="filter-chip" data-category="ANIMALI" role="tab" aria-selected="false">
+            <span class="filter-chip__name">ANIMALI</span>
+            <span class="filter-chip__count" data-count-for="ANIMALI">0</span>
+          </button>
+          <button type="button" class="filter-chip" data-category="ASTRATTO" role="tab" aria-selected="false">
+            <span class="filter-chip__name">ASTRATTO</span>
+            <span class="filter-chip__count" data-count-for="ASTRATTO">0</span>
+          </button>
+        </div>
+        <div class="filter-bar__status">
+          <span id="filter-showing-status">SHOWING [ 188 / 188 ]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ASYMMETRIC MASONRY GALLERY SECTION (188 REAL PHOTOS)
+    ========================================================================== -->
+    <section class="gallery-section" aria-label="Archivio Fotografico">
+      <div class="masonry-stage" id="masonry-stage" data-density="editorial">
+        <!-- Dynamically populated by app.js from window.PHOTOS_MANIFEST -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER / TECHNICAL COLOPHON + MAGNETIC BACK TO TOP [000]
+  ========================================================================== -->
+  <footer class="manifesto-footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col--brand">
+        <div class="footer-stamp">END OF CONTACT SHEET // ROLL_01—188</div>
+        <h2 class="footer-title">NICOLA VIANELLO</h2>
+        <p class="footer-sub">PHOTOGRAPHY MANIFESTO &amp; VISUAL ARCHIVE — ALL RIGHTS RESERVED.</p>
+      </div>
+
+      <div class="footer-col footer-col--specs">
+        <div class="footer-spec-item">
+          <span class="footer-spec-label">COLOR PROFILE</span>
+          <span class="footer-spec-val">COTTON PAPER #F6F5F0 // DARKROOM #0A0A0A</span>
+        </div>
+        <div class="footer-spec-item">
+          <span class="footer-spec-label">SAFELIGHT SIGNAL</span>
+          <span class="footer-spec-val">FILM RED #FF2A00 // ACID AMBER #E5FF00</span>
+        </div>
+        <div class="footer-spec-item">
+          <span class="footer-spec-label">ENGINE</span>
+          <span class="footer-spec-val">ZERO-CLS MASONRY / GSAP FLIP / LENIS SMOOTH INERTIA</span>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col--action">
+        <button type="button" class="magnetic-top-btn" id="back-to-top-btn" aria-label="Torna in cima al manifesto">
+          <span class="magnetic-top-btn__inner" id="magnetic-top-inner">
+            <span class="magnetic-top-btn__arrow">↑</span>
+            <span class="magnetic-top-btn__text">BACK TO TOP [000]</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <span>[ SYSTEM READY // NO PLACEHOLDERS // 100% ORIGINAL FRAMES ]</span>
+      <span id="footer-timestamp">ARCHIVE VERIFIED // 2026</span>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       LIGHTBOX "TAVOLO LUMINOSO" (HIGH-RES INSPECTOR + FILMSTRIP + LOUPE ZOOM)
+  ========================================================================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Tavolo Luminoso High-Res Inspector">
+    <div class="lightbox__backdrop" id="lightbox-backdrop"></div>
+
+    <!-- Top Lightbox HUD -->
+    <header class="lightbox__header">
+      <div class="lightbox__meta-left">
+        <span class="lightbox__counter" id="lb-counter">[ 001 / 231 ]</span>
+        <span class="lightbox__frame-code" id="lb-frame-code">FRM // 001</span>
+        <span class="lightbox__category-badge" id="lb-category">SOGGETTI</span>
+      </div>
+
+      <div class="lightbox__meta-center" id="lb-tech-specs">
+        <span id="lb-filename">DSCF1249.JPG</span>
+        <span class="hud-divider">//</span>
+        <span id="lb-dimensions">4240 × 2832 PX</span>
+        <span class="hud-divider">//</span>
+        <span id="lb-exif">35MM F/1.4 · 1/500s · ISO 1600</span>
+      </div>
+
+      <div class="lightbox__controls">
+        <button type="button" class="lb-btn" id="lb-zoom-btn" title="Zoom nel dettaglio della grana (Z o Doppio Click)">
+          <span id="lb-zoom-label">[ LOUPE 1.0x ]</span>
+        </button>
+        <button type="button" class="lb-btn lb-btn--close" id="lb-close-btn" title="Chiudi Tavolo Luminoso (ESC)">
+          [ CLOSE // ESC ]
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Stage with Prev / Next and Loupe Pan/Zoom -->
+    <div class="lightbox__stage" id="lb-stage">
+      <button type="button" class="lb-nav lb-nav--prev" id="lb-prev-btn" aria-label="Fotogramma precedente (Freccia Sinistra)">
+        <span>← PREV</span>
+      </button>
+
+      <div class="lightbox__viewport" id="lb-viewport">
+        <div class="lightbox__canvas" id="lb-canvas">
+          <img src="" alt="" class="lightbox__img" id="lb-img" draggable="false" />
+          <div class="lightbox__grain-loupe-hint" id="lb-zoom-hint">DRAG OR MOVE CURSOR TO INSPECT GRAIN // CLICK TO RESET</div>
+        </div>
+      </div>
+
+      <button type="button" class="lb-nav lb-nav--next" id="lb-next-btn" aria-label="Fotogramma successivo (Freccia Destra)">
+        <span>NEXT →</span>
+      </button>
+    </div>
+
+    <!-- Bottom Sliding Filmstrip (Provino a contatto scorrevole) -->
+    <footer class="lightbox__footer">
+      <div class="filmstrip-sprockets filmstrip-sprockets--top" aria-hidden="true"></div>
+      <div class="filmstrip-track" id="lb-filmstrip" role="listbox" aria-label="Striscia miniature provino">
+        <!-- Populated dynamically by app.js -->
+      </div>
+      <div class="filmstrip-sprockets filmstrip-sprockets--bottom" aria-hidden="true"></div>
+    </footer>
+  </div>
+
+  <!-- =========================================================================
+       SCRIPTS:
+       1. Generated Manifest Data (photos-data.js)
+       2. GSAP + ScrollTrigger + Flip (CDN)
+       3. Lenis Smooth Scroll (CDN)
+       4. Custom Application Engine (app.js)
+  ========================================================================== -->
+  <script src="photos-data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
