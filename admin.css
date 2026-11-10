@@ -241,32 +241,28 @@ html, body {
 }
 
 /* ==========================================
-   FILTER & SEARCH TOOLBAR
+   FILTER & SEARCH TOOLBAR (2 ROWS, ZERO OVERLAP)
    ========================================== */
 .cms-toolbar {
-  height: 52px;
   background: var(--bg-panel);
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  gap: 14px;
+  flex-direction: column;
+  padding: 8px 20px;
+  gap: 8px;
 }
 
-.toolbar-left {
+.toolbar-row-top {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .search-box {
   position: relative;
-  width: 240px;
-  min-width: 180px;
+  width: 320px;
+  max-width: 100%;
   flex-shrink: 0;
 }
 
@@ -308,13 +304,34 @@ html, body {
   cursor: pointer;
 }
 
-.cat-bar-container {
+.toolbar-controls-group {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 1;
+  flex-wrap: wrap;
+}
+
+.toolbar-row-bottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cat-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
   min-width: 0;
-  overflow: hidden;
+}
+
+.cat-bar-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-silver);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
 }
 
 .cat-pills {
@@ -337,7 +354,7 @@ html, body {
 
 .cat-pill {
   height: 28px;
-  padding: 0 10px;
+  padding: 0 11px;
   border-radius: 3px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -349,7 +366,7 @@ html, body {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   transition: all 0.15s;
   white-space: nowrap;
 }
@@ -393,7 +410,7 @@ html, body {
 
 .btn-add-cat {
   height: 28px;
-  padding: 0 10px;
+  padding: 0 12px;
   border-radius: 3px;
   background: rgba(229, 169, 60, 0.08);
   border: 1px dashed rgba(229, 169, 60, 0.45);
@@ -410,12 +427,6 @@ html, body {
   background: rgba(229, 169, 60, 0.2);
   border-color: var(--accent-amber);
   color: #fff;
-}
-
-.toolbar-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 /* ==========================================
@@ -483,12 +494,12 @@ html, body {
 .cms-workspace {
   display: grid;
   grid-template-columns: 1fr 410px;
-  height: calc(100vh - 114px);
+  height: calc(100vh - 150px);
   overflow: hidden;
 }
 
 body.has-batch .cms-workspace {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 196px);
 }
 
 /* CONTACT SHEET PANEL */

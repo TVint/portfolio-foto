@@ -25,6 +25,7 @@
     gridSize: "medium",
     activeFilename: null,
     selectedFilenames: new Set(),
+    lastSelectedFilename: null,
     uploadQueue: [],
   };
 
@@ -979,7 +980,7 @@
       showToast(`${count} scatti rimossi dall'archivio.`);
     });
 
-    // Contact sheet grid clicks (card activation, checkbox toggle, 1-click quick category)
+    // Contact sheet grid clicks (card activation, checkbox toggle, Shift+Click range selection, 1-click quick category)
     el.grid.addEventListener("click", (e) => {
       const qcatBtn = e.target.closest("[data-qcat]");
       if (qcatBtn) {
@@ -988,23 +989,57 @@
       }
 
       const checkInp = e.target.closest("[data-check-fn]");
-      if (checkInp) {
-        const fn = checkInp.dataset.checkFn;
-        if (checkInp.checked) {
+      const card = e.target.closest(".frame-card");
+
+      // Handle checkbox click or Shift+Click on card/checkbox
+      if (checkInp || (e.shiftKey && card)) {
+        const fn = checkInp ? checkInp.dataset.checkFn : card.dataset.filename;
+
+        if (e.shiftKey && state.lastSelectedFilename && state.lastSelectedFilename !== fn) {
+          // Select range from lastSelectedFilename to current fn in filteredPhotos
+          const fList = state.filteredPhotos.map((p) => p.filename);
+          const idxA = fList.indexOf(state.lastSelectedFilename);
+          const idxB = fList.indexOf(fn);
+
+          if (idxA !== -1 && idxB !== -1) {
+            const start = Math.min(idxA, idxB);
+            const end = Math.max(idxA, idxB);
+            for (let i = start; i <= end; i++) {
+              state.selectedFilenames.add(fList[i]);
+            }
+            state.lastSelectedFilename = fn;
+            renderStats();
+            renderBatchBar();
+            renderContactSheetGrid();
+            showToast(`✓ Selezionati ${end - start + 1} scatti (Shift+Click)`);
+            return;
+          }
+        }
+
+        // Normal single toggle
+        const isChecked = checkInp ? checkInp.checked : !state.selectedFilenames.has(fn);
+        if (isChecked) {
           state.selectedFilenames.add(fn);
+          state.lastSelectedFilename = fn;
         } else {
           state.selectedFilenames.delete(fn);
+          if (state.lastSelectedFilename === fn) {
+            state.lastSelectedFilename = null;
+          }
         }
         renderStats();
         renderBatchBar();
-        const card = checkInp.closest(".frame-card");
-        if (card) card.classList.toggle("selected", checkInp.checked);
+        if (card) {
+          card.classList.toggle("selected", isChecked);
+          const inp = card.querySelector(".frame-checkbox");
+          if (inp) inp.checked = isChecked;
+        }
         return;
       }
 
-      const card = e.target.closest(".frame-card");
       if (card) {
         state.activeFilename = card.dataset.filename;
+        state.lastSelectedFilename = card.dataset.filename;
         renderContactSheetGrid();
         renderInspector();
       }

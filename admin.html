@@ -61,42 +61,45 @@
     </div>
   </header>
 
-  <!-- FILTER & CATEGORY BAR -->
+  <!-- FILTER & CATEGORY BAR (ROW 1: CONTROLS & SEARCH, ROW 2: CATEGORY STRIP) -->
   <section class="cms-toolbar">
-    <div class="toolbar-left">
+    <div class="toolbar-row-top">
       <div class="search-box">
         <span class="search-icon">⌕</span>
-        <input type="text" id="search-input" placeholder="Cerca per nome file (es. DSCF1249), #ID, titolo, ottica..." />
+        <input type="text" id="search-input" placeholder="Cerca scatto per nome, #ID, titolo, ottica..." />
         <button class="search-clear" id="btn-clear-search" title="Pulisci ricerca">×</button>
       </div>
 
+      <div class="toolbar-controls-group">
+        <select id="orientation-filter" class="cms-select" title="Filtra per orientamento">
+          <option value="ALL">Tutti i Formati</option>
+          <option value="landscape">Landscape (Orizzontale)</option>
+          <option value="portrait">Portrait (Verticale)</option>
+          <option value="panoramic">Panoramic (Wide)</option>
+          <option value="square">Square (Quadrato)</option>
+        </select>
+
+        <select id="grid-size-select" class="cms-select" title="Dimensione miniature provino">
+          <option value="medium">Provino Medio</option>
+          <option value="compact">Provino Compatto (8 col)</option>
+          <option value="large">Provino Grande (Loupe)</option>
+          <option value="list">Vista Tabella</option>
+        </select>
+
+        <button class="btn btn-ghost" id="btn-select-visible" title="Seleziona o deseleziona tutti gli scatti visibili (anche con Shift+Click)">
+          ☑ Seleziona Visibili
+        </button>
+      </div>
+    </div>
+
+    <div class="toolbar-row-bottom">
       <div class="cat-bar-container">
+        <span class="cat-bar-label">CATEGORIE:</span>
         <div class="cat-pills" id="category-filter-pills">
           <!-- Populated dynamically by admin.js -->
         </div>
         <button class="btn-add-cat" id="btn-add-category" title="Aggiungi una nuova categoria">+ CATEGORIA</button>
       </div>
-    </div>
-
-    <div class="toolbar-right">
-      <select id="orientation-filter" class="cms-select" title="Filtra per orientamento">
-        <option value="ALL">Tutti i Formati</option>
-        <option value="landscape">Landscape (Orizzontale)</option>
-        <option value="portrait">Portrait (Verticale)</option>
-        <option value="panoramic">Panoramic (Wide)</option>
-        <option value="square">Square (Quadrato)</option>
-      </select>
-
-      <select id="grid-size-select" class="cms-select" title="Dimensione miniature provino">
-        <option value="medium">Provino Medio</option>
-        <option value="compact">Provino Compatto (8 col)</option>
-        <option value="large">Provino Grande (Loupe)</option>
-        <option value="list">Vista Tabella</option>
-      </select>
-
-      <button class="btn btn-ghost" id="btn-select-visible" title="Seleziona o deseleziona tutti gli scatti visibili">
-        ☑ Seleziona Visibili
-      </button>
     </div>
   </section>
 
