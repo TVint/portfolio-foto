@@ -134,6 +134,59 @@
       counts[p.category] = (counts[p.category] || 0) + 1;
     });
 
+    // Dynamically render category filter chips based on window.PHOTOS_CATEGORIES or photo categories
+    const catContainer = document.getElementById("category-filters");
+    if (catContainer) {
+      const definedCategories = Array.isArray(window.PHOTOS_CATEGORIES) && window.PHOTOS_CATEGORIES.length
+        ? window.PHOTOS_CATEGORIES
+        : ["NATURA", "PARTY", "SOGGETTI", "ANIMALI", "ASTRATTO"];
+      
+      // Also collect any category used in photos
+      const allUniqueCats = Array.from(new Set([...definedCategories, ...PHOTOS.map(p => p.category).filter(Boolean)]));
+
+      catContainer.innerHTML = `
+        <button type="button" class="filter-chip ${state.category === 'ALL' ? 'is-active' : ''}" data-category="ALL" role="tab" aria-selected="${state.category === 'ALL'}">
+          <span class="filter-chip__name">ALL</span>
+          <span class="filter-chip__count" data-count-for="ALL">${TOTAL_COUNT}</span>
+        </button>
+      ` + allUniqueCats.map(cat => {
+        const isActive = state.category === cat ? 'is-active' : '';
+        const count = counts[cat] || 0;
+        return `
+          <button type="button" class="filter-chip ${isActive}" data-category="${cat}" role="tab" aria-selected="${state.category === cat}">
+            <span class="filter-chip__name">${cat}</span>
+            <span class="filter-chip__count" data-count-for="${cat}">${count}</span>
+          </button>
+        `;
+      }).join("");
+
+      // Re-bind click events to all filter chips
+      dom.filterBtns = catContainer.querySelectorAll(".filter-chip");
+      dom.filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const cat = btn.dataset.category;
+          if (!cat || cat === state.category) return;
+
+          state.category = cat;
+          dom.filterBtns.forEach((b) => {
+            const active = b === btn;
+            b.classList.toggle("is-active", active);
+            b.setAttribute("aria-selected", String(active));
+          });
+
+          state.filteredPhotos =
+            cat === "ALL" ? [...PHOTOS] : PHOTOS.filter((p) => p.category === cat);
+
+          if (dom.specActiveCategory) {
+            dom.specActiveCategory.textContent = cat === "ALL" ? "ALL FRAMES" : cat;
+          }
+
+          renderMasonryColumns(true);
+          buildFilmstrip();
+        });
+      });
+    }
+
     document.querySelectorAll("[data-count-for]").forEach((el) => {
       const cat = el.getAttribute("data-count-for");
       el.textContent = String(counts[cat] || 0);

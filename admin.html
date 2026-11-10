@@ -66,14 +66,16 @@
     <div class="toolbar-left">
       <div class="search-box">
         <span class="search-icon">⌕</span>
-        <input type="text" id="search-input" placeholder="Cerca per nome file (es. DSCF1249), #ID, titolo, ottica, pellicola..." />
+        <input type="text" id="search-input" placeholder="Cerca per nome file (es. DSCF1249), #ID, titolo, ottica..." />
         <button class="search-clear" id="btn-clear-search" title="Pulisci ricerca">×</button>
       </div>
 
-      <div class="cat-pills" id="category-filter-pills">
-        <!-- Populated dynamically by admin.js -->
+      <div class="cat-bar-container">
+        <div class="cat-pills" id="category-filter-pills">
+          <!-- Populated dynamically by admin.js -->
+        </div>
+        <button class="btn-add-cat" id="btn-add-category" title="Aggiungi una nuova categoria">+ CATEGORIA</button>
       </div>
-      <button class="btn-add-cat" id="btn-add-category" title="Aggiungi una nuova categoria">+ CATEGORIA</button>
     </div>
 
     <div class="toolbar-right">

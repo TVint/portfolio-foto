@@ -362,10 +362,16 @@
         const active = state.activeCategory === cat ? "active" : "";
         const label = cat === "ALL" ? "TUTTI" : cat;
         const cnt = counts[cat] || 0;
-        return `<button type="button" class="cat-pill ${active}" data-cat="${cat}">
-          <span>${label}</span>
-          <span class="count">(${cnt})</span>
-        </button>`;
+        const isCustom = cat !== "ALL";
+        return `
+          <div class="cat-pill-wrap">
+            <button type="button" class="cat-pill ${active}" data-cat="${cat}">
+              <span>${label}</span>
+              <span class="count">(${cnt})</span>
+              ${isCustom ? `<span class="cat-del-btn" data-del-cat="${cat}" title="Elimina categoria ${cat}">✕</span>` : ''}
+            </button>
+          </div>
+        `;
       })
       .join("");
 
@@ -836,8 +842,33 @@
       renderAll();
     });
 
-    // Category filter pills
+    // Category filter pills & delete category
     el.catFilterPills.addEventListener("click", (e) => {
+      const delBtn = e.target.closest("[data-del-cat]");
+      if (delBtn) {
+        e.stopPropagation();
+        const catToDelete = delBtn.dataset.delCat;
+        const usedCount = state.photos.filter(p => p.category === catToDelete).length;
+        const confirmMsg = usedCount > 0
+          ? `La categoria '${catToDelete}' è usata da ${usedCount} scatti.\nEliminandola, questi scatti verranno spostati nella categoria 'ASTRATTO'. Continuare?`
+          : `Vuoi eliminare la categoria '${catToDelete}'?`;
+        
+        if (confirm(confirmMsg)) {
+          if (usedCount > 0) {
+            state.photos.forEach(p => {
+              if (p.category === catToDelete) p.category = "ASTRATTO";
+            });
+          }
+          state.categories = state.categories.filter(c => c !== catToDelete);
+          if (state.activeCategory === catToDelete) state.activeCategory = "ALL";
+          markDirty();
+          applyFilters();
+          renderAll();
+          showToast(`✓ Categoria '${catToDelete}' eliminata.`);
+        }
+        return;
+      }
+
       const btn = e.target.closest("[data-cat]");
       if (!btn) return;
       state.activeCategory = btn.dataset.cat;
