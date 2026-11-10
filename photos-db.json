@@ -1672,7 +1672,7 @@
       "height": 3376,
       "aspectRatio": 1.7773,
       "orientation": "panoramic",
-      "category": "NATURA",
+      "category": "SOGGETTI",
       "stock": "FUJIFILM PRO NEG. HI // 35MM EQ",
       "lens": "35MM F/1.4",
       "shutter": "1/125s",
@@ -1799,44 +1799,6 @@
       "index": 95,
       "id": "#095",
       "frame": "FRM // 095",
-      "filename": "DSCF8797.JPG",
-      "src": "FOTO/DSCF8797.JPG",
-      "width": 2802,
-      "height": 4981,
-      "aspectRatio": 0.5625,
-      "orientation": "portrait",
-      "category": "NATURA",
-      "stock": "FUJIFILM PRO NEG. HI // 35MM EQ",
-      "lens": "50MM F/2.0",
-      "shutter": "1/125s",
-      "iso": "ISO 160",
-      "luminance": 0.5,
-      "thumb": "THUMBS/DSCF8797.JPG",
-      "title": ""
-    },
-    {
-      "index": 96,
-      "id": "#096",
-      "frame": "FRM // 096",
-      "filename": "DSCF8806.JPG",
-      "src": "FOTO/DSCF8806.JPG",
-      "width": 6000,
-      "height": 3376,
-      "aspectRatio": 1.7773,
-      "orientation": "panoramic",
-      "category": "NATURA",
-      "stock": "FUJIFILM PRO NEG. HI // 35MM EQ",
-      "lens": "35MM F/1.4",
-      "shutter": "1/60s",
-      "iso": "ISO 1600",
-      "luminance": 0.5,
-      "thumb": "THUMBS/DSCF8806.JPG",
-      "title": ""
-    },
-    {
-      "index": 97,
-      "id": "#097",
-      "frame": "FRM // 097",
       "filename": "DSCF8812.JPG",
       "src": "FOTO/DSCF8812.JPG",
       "width": 6000,
@@ -1853,9 +1815,9 @@
       "title": ""
     },
     {
-      "index": 98,
-      "id": "#098",
-      "frame": "FRM // 098",
+      "index": 96,
+      "id": "#096",
+      "frame": "FRM // 096",
       "filename": "DSCF8819.JPG",
       "src": "FOTO/DSCF8819.JPG",
       "width": 2971,
@@ -1872,9 +1834,9 @@
       "title": ""
     },
     {
-      "index": 99,
-      "id": "#099",
-      "frame": "FRM // 099",
+      "index": 97,
+      "id": "#097",
+      "frame": "FRM // 097",
       "filename": "DSCF8822.JPG",
       "src": "FOTO/DSCF8822.JPG",
       "width": 6000,
@@ -1891,9 +1853,9 @@
       "title": ""
     },
     {
-      "index": 100,
-      "id": "#100",
-      "frame": "FRM // 100",
+      "index": 98,
+      "id": "#098",
+      "frame": "FRM // 098",
       "filename": "IMGP0070.JPG",
       "src": "FOTO/IMGP0070.JPG",
       "width": 3008,
@@ -1910,9 +1872,9 @@
       "title": ""
     },
     {
-      "index": 101,
-      "id": "#101",
-      "frame": "FRM // 101",
+      "index": 99,
+      "id": "#099",
+      "frame": "FRM // 099",
       "filename": "IMGP0082.JPG",
       "src": "FOTO/IMGP0082.JPG",
       "width": 3008,
@@ -1929,9 +1891,9 @@
       "title": ""
     },
     {
-      "index": 102,
-      "id": "#102",
-      "frame": "FRM // 102",
+      "index": 100,
+      "id": "#100",
+      "frame": "FRM // 100",
       "filename": "IMGP0093.JPG",
       "src": "FOTO/IMGP0093.JPG",
       "width": 3008,
@@ -1948,9 +1910,9 @@
       "title": ""
     },
     {
-      "index": 103,
-      "id": "#103",
-      "frame": "FRM // 103",
+      "index": 101,
+      "id": "#101",
+      "frame": "FRM // 101",
       "filename": "IMGP0138.JPG",
       "src": "FOTO/IMGP0138.JPG",
       "width": 3008,
@@ -1967,9 +1929,9 @@
       "title": ""
     },
     {
-      "index": 104,
-      "id": "#104",
-      "frame": "FRM // 104",
+      "index": 102,
+      "id": "#102",
+      "frame": "FRM // 102",
       "filename": "IMGP0155.JPG",
       "src": "FOTO/IMGP0155.JPG",
       "width": 3008,
@@ -1986,9 +1948,9 @@
       "title": ""
     },
     {
-      "index": 105,
-      "id": "#105",
-      "frame": "FRM // 105",
+      "index": 103,
+      "id": "#103",
+      "frame": "FRM // 103",
       "filename": "IMGP0178.JPG",
       "src": "FOTO/IMGP0178.JPG",
       "width": 3008,
@@ -2005,9 +1967,9 @@
       "title": ""
     },
     {
-      "index": 106,
-      "id": "#106",
-      "frame": "FRM // 106",
+      "index": 104,
+      "id": "#104",
+      "frame": "FRM // 104",
       "filename": "IMGP0179.JPG",
       "src": "FOTO/IMGP0179.JPG",
       "width": 3008,
@@ -2024,9 +1986,9 @@
       "title": ""
     },
     {
-      "index": 107,
-      "id": "#107",
-      "frame": "FRM // 107",
+      "index": 105,
+      "id": "#105",
+      "frame": "FRM // 105",
       "filename": "IMGP0204.JPG",
       "src": "FOTO/IMGP0204.JPG",
       "width": 3008,
@@ -2043,9 +2005,9 @@
       "title": ""
     },
     {
-      "index": 108,
-      "id": "#108",
-      "frame": "FRM // 108",
+      "index": 106,
+      "id": "#106",
+      "frame": "FRM // 106",
       "filename": "IMGP0209.JPG",
       "src": "FOTO/IMGP0209.JPG",
       "width": 3008,
@@ -2062,9 +2024,9 @@
       "title": ""
     },
     {
-      "index": 109,
-      "id": "#109",
-      "frame": "FRM // 109",
+      "index": 107,
+      "id": "#107",
+      "frame": "FRM // 107",
       "filename": "IMGP0221.JPG",
       "src": "FOTO/IMGP0221.JPG",
       "width": 3008,
@@ -2081,9 +2043,9 @@
       "title": ""
     },
     {
-      "index": 110,
-      "id": "#110",
-      "frame": "FRM // 110",
+      "index": 108,
+      "id": "#108",
+      "frame": "FRM // 108",
       "filename": "IMGP0226.JPG",
       "src": "FOTO/IMGP0226.JPG",
       "width": 3008,
@@ -2100,9 +2062,9 @@
       "title": ""
     },
     {
-      "index": 111,
-      "id": "#111",
-      "frame": "FRM // 111",
+      "index": 109,
+      "id": "#109",
+      "frame": "FRM // 109",
       "filename": "IMGP0236.JPG",
       "src": "FOTO/IMGP0236.JPG",
       "width": 3008,
@@ -2119,9 +2081,9 @@
       "title": ""
     },
     {
-      "index": 112,
-      "id": "#112",
-      "frame": "FRM // 112",
+      "index": 110,
+      "id": "#110",
+      "frame": "FRM // 110",
       "filename": "IMGP0238.JPG",
       "src": "FOTO/IMGP0238.JPG",
       "width": 3008,
@@ -2138,9 +2100,9 @@
       "title": ""
     },
     {
-      "index": 113,
-      "id": "#113",
-      "frame": "FRM // 113",
+      "index": 111,
+      "id": "#111",
+      "frame": "FRM // 111",
       "filename": "IMGP0253.JPG",
       "src": "FOTO/IMGP0253.JPG",
       "width": 3008,
@@ -2157,9 +2119,9 @@
       "title": ""
     },
     {
-      "index": 114,
-      "id": "#114",
-      "frame": "FRM // 114",
+      "index": 112,
+      "id": "#112",
+      "frame": "FRM // 112",
       "filename": "IMGP0254.JPG",
       "src": "FOTO/IMGP0254.JPG",
       "width": 3008,
@@ -2176,9 +2138,9 @@
       "title": ""
     },
     {
-      "index": 115,
-      "id": "#115",
-      "frame": "FRM // 115",
+      "index": 113,
+      "id": "#113",
+      "frame": "FRM // 113",
       "filename": "IMG_20260406_223751.jpg",
       "src": "FOTO/IMG_20260406_223751.jpg",
       "width": 4624,
@@ -2195,9 +2157,9 @@
       "title": ""
     },
     {
-      "index": 116,
-      "id": "#116",
-      "frame": "FRM // 116",
+      "index": 114,
+      "id": "#114",
+      "frame": "FRM // 114",
       "filename": "IMG_20260407_125653.jpg",
       "src": "FOTO/IMG_20260407_125653.jpg",
       "width": 4208,
@@ -2214,9 +2176,9 @@
       "title": ""
     },
     {
-      "index": 117,
-      "id": "#117",
-      "frame": "FRM // 117",
+      "index": 115,
+      "id": "#115",
+      "frame": "FRM // 115",
       "filename": "IMG_20260620_144357.jpg",
       "src": "FOTO/IMG_20260620_144357.jpg",
       "width": 1702,
@@ -2233,28 +2195,9 @@
       "title": ""
     },
     {
-      "index": 118,
-      "id": "#118",
-      "frame": "FRM // 118",
-      "filename": "IMG_20260620_154718.jpg",
-      "src": "FOTO/IMG_20260620_154718.jpg",
-      "width": 4624,
-      "height": 2080,
-      "aspectRatio": 2.2231,
-      "orientation": "panoramic",
-      "category": "NATURA",
-      "stock": "ILFORD HP5 PLUS // LAB SCAN",
-      "lens": "28MM F/2.8",
-      "shutter": "1/2000s",
-      "iso": "ISO 1600",
-      "luminance": 0.5,
-      "thumb": "THUMBS/IMG_20260620_154718.jpg",
-      "title": ""
-    },
-    {
-      "index": 119,
-      "id": "#119",
-      "frame": "FRM // 119",
+      "index": 116,
+      "id": "#116",
+      "frame": "FRM // 116",
       "filename": "IMG_20260620_175753.jpg",
       "src": "FOTO/IMG_20260620_175753.jpg",
       "width": 4624,
@@ -2271,9 +2214,9 @@
       "title": ""
     },
     {
-      "index": 120,
-      "id": "#120",
-      "frame": "FRM // 120",
+      "index": 117,
+      "id": "#117",
+      "frame": "FRM // 117",
       "filename": "IMG_20260620_175943.jpg",
       "src": "FOTO/IMG_20260620_175943.jpg",
       "width": 4208,
@@ -2290,9 +2233,9 @@
       "title": ""
     },
     {
-      "index": 121,
-      "id": "#121",
-      "frame": "FRM // 121",
+      "index": 118,
+      "id": "#118",
+      "frame": "FRM // 118",
       "filename": "IMG_20260620_180408.jpg",
       "src": "FOTO/IMG_20260620_180408.jpg",
       "width": 4624,
@@ -2309,9 +2252,9 @@
       "title": ""
     },
     {
-      "index": 122,
-      "id": "#122",
-      "frame": "FRM // 122",
+      "index": 119,
+      "id": "#119",
+      "frame": "FRM // 119",
       "filename": "IMG_20260620_181209.jpg",
       "src": "FOTO/IMG_20260620_181209.jpg",
       "width": 4208,
@@ -2328,9 +2271,9 @@
       "title": ""
     },
     {
-      "index": 123,
-      "id": "#123",
-      "frame": "FRM // 123",
+      "index": 120,
+      "id": "#120",
+      "frame": "FRM // 120",
       "filename": "IMG_20260620_181337.jpg",
       "src": "FOTO/IMG_20260620_181337.jpg",
       "width": 3504,
@@ -2347,9 +2290,9 @@
       "title": ""
     },
     {
-      "index": 124,
-      "id": "#124",
-      "frame": "FRM // 124",
+      "index": 121,
+      "id": "#121",
+      "frame": "FRM // 121",
       "filename": "IMG_20260620_234840.jpg",
       "src": "FOTO/IMG_20260620_234840.jpg",
       "width": 4624,
@@ -2366,9 +2309,9 @@
       "title": ""
     },
     {
-      "index": 125,
-      "id": "#125",
-      "frame": "FRM // 125",
+      "index": 122,
+      "id": "#122",
+      "frame": "FRM // 122",
       "filename": "IMG_20260620_235244_TIMEBURST1.jpg",
       "src": "FOTO/IMG_20260620_235244_TIMEBURST1.jpg",
       "width": 4208,
@@ -2385,9 +2328,9 @@
       "title": ""
     },
     {
-      "index": 126,
-      "id": "#126",
-      "frame": "FRM // 126",
+      "index": 123,
+      "id": "#123",
+      "frame": "FRM // 123",
       "filename": "IMG_20260621_022806.jpg",
       "src": "FOTO/IMG_20260621_022806.jpg",
       "width": 4624,
@@ -2404,47 +2347,9 @@
       "title": ""
     },
     {
-      "index": 127,
-      "id": "#127",
-      "frame": "FRM // 127",
-      "filename": "IMG_20260704_052924.jpg",
-      "src": "FOTO/IMG_20260704_052924.jpg",
-      "width": 4208,
-      "height": 1892,
-      "aspectRatio": 2.2241,
-      "orientation": "panoramic",
-      "category": "NATURA",
-      "stock": "ILFORD HP5 PLUS // LAB SCAN",
-      "lens": "28MM F/2.8",
-      "shutter": "1/1000s",
-      "iso": "ISO 160",
-      "luminance": 0.5,
-      "thumb": "THUMBS/IMG_20260704_052924.jpg",
-      "title": ""
-    },
-    {
-      "index": 128,
-      "id": "#128",
-      "frame": "FRM // 128",
-      "filename": "IMG_20260704_053231.jpg",
-      "src": "FOTO/IMG_20260704_053231.jpg",
-      "width": 4624,
-      "height": 1409,
-      "aspectRatio": 3.2818,
-      "orientation": "panoramic",
-      "category": "NATURA",
-      "stock": "ILFORD HP5 PLUS // LAB SCAN",
-      "lens": "28MM F/2.8",
-      "shutter": "1/500s",
-      "iso": "ISO 1600",
-      "luminance": 0.5,
-      "thumb": "THUMBS/IMG_20260704_053231.jpg",
-      "title": ""
-    },
-    {
-      "index": 129,
-      "id": "#129",
-      "frame": "FRM // 129",
+      "index": 124,
+      "id": "#124",
+      "frame": "FRM // 124",
       "filename": "IMG_20260704_054103_1.jpg",
       "src": "FOTO/IMG_20260704_054103_1.jpg",
       "width": 4624,
@@ -2461,9 +2366,9 @@
       "title": ""
     },
     {
-      "index": 130,
-      "id": "#130",
-      "frame": "FRM // 130",
+      "index": 125,
+      "id": "#125",
+      "frame": "FRM // 125",
       "filename": "IMG_20260704_205247.jpg",
       "src": "FOTO/IMG_20260704_205247.jpg",
       "width": 4208,
@@ -2480,9 +2385,9 @@
       "title": ""
     },
     {
-      "index": 131,
-      "id": "#131",
-      "frame": "FRM // 131",
+      "index": 126,
+      "id": "#126",
+      "frame": "FRM // 126",
       "filename": "IMG_20260711_211154.jpg",
       "src": "FOTO/IMG_20260711_211154.jpg",
       "width": 3710,
@@ -2499,9 +2404,9 @@
       "title": ""
     },
     {
-      "index": 132,
-      "id": "#132",
-      "frame": "FRM // 132",
+      "index": 127,
+      "id": "#127",
+      "frame": "FRM // 127",
       "filename": "IMG_20260712_005609.jpg",
       "src": "FOTO/IMG_20260712_005609.jpg",
       "width": 4624,
@@ -2518,9 +2423,9 @@
       "title": ""
     },
     {
-      "index": 133,
-      "id": "#133",
-      "frame": "FRM // 133",
+      "index": 128,
+      "id": "#128",
+      "frame": "FRM // 128",
       "filename": "IMG_20260712_012818.jpg",
       "src": "FOTO/IMG_20260712_012818.jpg",
       "width": 4208,
@@ -2537,9 +2442,9 @@
       "title": ""
     },
     {
-      "index": 134,
-      "id": "#134",
-      "frame": "FRM // 134",
+      "index": 129,
+      "id": "#129",
+      "frame": "FRM // 129",
       "filename": "IMG_20260712_021804.jpg",
       "src": "FOTO/IMG_20260712_021804.jpg",
       "width": 4624,
@@ -2556,9 +2461,9 @@
       "title": ""
     },
     {
-      "index": 135,
-      "id": "#135",
-      "frame": "FRM // 135",
+      "index": 130,
+      "id": "#130",
+      "frame": "FRM // 130",
       "filename": "IMG_20260712_025021.jpg",
       "src": "FOTO/IMG_20260712_025021.jpg",
       "width": 4624,
@@ -2575,9 +2480,9 @@
       "title": ""
     },
     {
-      "index": 136,
-      "id": "#136",
-      "frame": "FRM // 136",
+      "index": 131,
+      "id": "#131",
+      "frame": "FRM // 131",
       "filename": "IMG_20260802_142350.jpg",
       "src": "FOTO/IMG_20260802_142350.jpg",
       "width": 3461,
@@ -2594,9 +2499,9 @@
       "title": ""
     },
     {
-      "index": 137,
-      "id": "#137",
-      "frame": "FRM // 137",
+      "index": 132,
+      "id": "#132",
+      "frame": "FRM // 132",
       "filename": "IMG_20260808_210046_1.jpg",
       "src": "FOTO/IMG_20260808_210046_1.jpg",
       "width": 4624,
@@ -2613,9 +2518,9 @@
       "title": ""
     },
     {
-      "index": 138,
-      "id": "#138",
-      "frame": "FRM // 138",
+      "index": 133,
+      "id": "#133",
+      "frame": "FRM // 133",
       "filename": "IMG_20260808_225708.jpg",
       "src": "FOTO/IMG_20260808_225708.jpg",
       "width": 4208,
@@ -2632,9 +2537,9 @@
       "title": ""
     },
     {
-      "index": 139,
-      "id": "#139",
-      "frame": "FRM // 139",
+      "index": 134,
+      "id": "#134",
+      "frame": "FRM // 134",
       "filename": "IMG_20260808_225756.jpg",
       "src": "FOTO/IMG_20260808_225756.jpg",
       "width": 4208,
@@ -2651,9 +2556,9 @@
       "title": ""
     },
     {
-      "index": 140,
-      "id": "#140",
-      "frame": "FRM // 140",
+      "index": 135,
+      "id": "#135",
+      "frame": "FRM // 135",
       "filename": "IMG_20260911_213124.jpg",
       "src": "FOTO/IMG_20260911_213124.jpg",
       "width": 4624,
@@ -2670,9 +2575,9 @@
       "title": ""
     },
     {
-      "index": 141,
-      "id": "#141",
-      "frame": "FRM // 141",
+      "index": 136,
+      "id": "#136",
+      "frame": "FRM // 136",
       "filename": "IMG_20260912_193925.jpg",
       "src": "FOTO/IMG_20260912_193925.jpg",
       "width": 4624,
@@ -2689,9 +2594,9 @@
       "title": ""
     },
     {
-      "index": 142,
-      "id": "#142",
-      "frame": "FRM // 142",
+      "index": 137,
+      "id": "#137",
+      "frame": "FRM // 137",
       "filename": "IMG_20260912_193928.jpg",
       "src": "FOTO/IMG_20260912_193928.jpg",
       "width": 4624,
@@ -2708,9 +2613,9 @@
       "title": ""
     },
     {
-      "index": 143,
-      "id": "#143",
-      "frame": "FRM // 143",
+      "index": 138,
+      "id": "#138",
+      "frame": "FRM // 138",
       "filename": "IMG_20260912_194022_1.jpg",
       "src": "FOTO/IMG_20260912_194022_1.jpg",
       "width": 4624,
@@ -2727,9 +2632,9 @@
       "title": ""
     },
     {
-      "index": 144,
-      "id": "#144",
-      "frame": "FRM // 144",
+      "index": 139,
+      "id": "#139",
+      "frame": "FRM // 139",
       "filename": "IMG_20260912_194209.jpg",
       "src": "FOTO/IMG_20260912_194209.jpg",
       "width": 4624,
@@ -2746,9 +2651,9 @@
       "title": ""
     },
     {
-      "index": 145,
-      "id": "#145",
-      "frame": "FRM // 145",
+      "index": 140,
+      "id": "#140",
+      "frame": "FRM // 140",
       "filename": "IMG_20260912_194303.jpg",
       "src": "FOTO/IMG_20260912_194303.jpg",
       "width": 4624,
@@ -2765,9 +2670,9 @@
       "title": ""
     },
     {
-      "index": 146,
-      "id": "#146",
-      "frame": "FRM // 146",
+      "index": 141,
+      "id": "#141",
+      "frame": "FRM // 141",
       "filename": "IMG_20260912_194305.jpg",
       "src": "FOTO/IMG_20260912_194305.jpg",
       "width": 4624,
@@ -2784,9 +2689,9 @@
       "title": ""
     },
     {
-      "index": 147,
-      "id": "#147",
-      "frame": "FRM // 147",
+      "index": 142,
+      "id": "#142",
+      "frame": "FRM // 142",
       "filename": "IMG_20260912_194319.jpg",
       "src": "FOTO/IMG_20260912_194319.jpg",
       "width": 4624,
@@ -2803,9 +2708,9 @@
       "title": ""
     },
     {
-      "index": 148,
-      "id": "#148",
-      "frame": "FRM // 148",
+      "index": 143,
+      "id": "#143",
+      "frame": "FRM // 143",
       "filename": "PSX_20260406_211010.jpg",
       "src": "FOTO/PSX_20260406_211010.jpg",
       "width": 1557,
@@ -2822,9 +2727,9 @@
       "title": ""
     },
     {
-      "index": 149,
-      "id": "#149",
-      "frame": "FRM // 149",
+      "index": 144,
+      "id": "#144",
+      "frame": "FRM // 144",
       "filename": "PSX_20260407_211926.jpg",
       "src": "FOTO/PSX_20260407_211926.jpg",
       "width": 1627,
@@ -2841,9 +2746,9 @@
       "title": ""
     },
     {
-      "index": 150,
-      "id": "#150",
-      "frame": "FRM // 150",
+      "index": 145,
+      "id": "#145",
+      "frame": "FRM // 145",
       "filename": "PSX_20260407_212742.jpg",
       "src": "FOTO/PSX_20260407_212742.jpg",
       "width": 2874,
@@ -2860,9 +2765,9 @@
       "title": ""
     },
     {
-      "index": 151,
-      "id": "#151",
-      "frame": "FRM // 151",
+      "index": 146,
+      "id": "#146",
+      "frame": "FRM // 146",
       "filename": "PSX_20260407_213407.jpg",
       "src": "FOTO/PSX_20260407_213407.jpg",
       "width": 1914,
@@ -2879,9 +2784,9 @@
       "title": ""
     },
     {
-      "index": 152,
-      "id": "#152",
-      "frame": "FRM // 152",
+      "index": 147,
+      "id": "#147",
+      "frame": "FRM // 147",
       "filename": "PSX_20260620_181617.jpg",
       "src": "FOTO/PSX_20260620_181617.jpg",
       "width": 3504,
@@ -2898,9 +2803,9 @@
       "title": ""
     },
     {
-      "index": 153,
-      "id": "#153",
-      "frame": "FRM // 153",
+      "index": 148,
+      "id": "#148",
+      "frame": "FRM // 148",
       "filename": "PSX_20260620_182208.jpg",
       "src": "FOTO/PSX_20260620_182208.jpg",
       "width": 4208,
@@ -2917,9 +2822,9 @@
       "title": ""
     },
     {
-      "index": 154,
-      "id": "#154",
-      "frame": "FRM // 154",
+      "index": 149,
+      "id": "#149",
+      "frame": "FRM // 149",
       "filename": "PSX_20260620_233526.jpg",
       "src": "FOTO/PSX_20260620_233526.jpg",
       "width": 4622,
@@ -2936,9 +2841,9 @@
       "title": ""
     },
     {
-      "index": 155,
-      "id": "#155",
-      "frame": "FRM // 155",
+      "index": 150,
+      "id": "#150",
+      "frame": "FRM // 150",
       "filename": "PSX_20260620_233740.jpg",
       "src": "FOTO/PSX_20260620_233740.jpg",
       "width": 1939,
@@ -2955,9 +2860,9 @@
       "title": ""
     },
     {
-      "index": 156,
-      "id": "#156",
-      "frame": "FRM // 156",
+      "index": 151,
+      "id": "#151",
+      "frame": "FRM // 151",
       "filename": "PSX_20260620_235901.jpg",
       "src": "FOTO/PSX_20260620_235901.jpg",
       "width": 4406,
@@ -2974,9 +2879,9 @@
       "title": ""
     },
     {
-      "index": 157,
-      "id": "#157",
-      "frame": "FRM // 157",
+      "index": 152,
+      "id": "#152",
+      "frame": "FRM // 152",
       "filename": "PSX_20260621_122329.jpg",
       "src": "FOTO/PSX_20260621_122329.jpg",
       "width": 470,
@@ -2993,9 +2898,9 @@
       "title": ""
     },
     {
-      "index": 158,
-      "id": "#158",
-      "frame": "FRM // 158",
+      "index": 153,
+      "id": "#153",
+      "frame": "FRM // 153",
       "filename": "PSX_20260711_205051.jpg",
       "src": "FOTO/PSX_20260711_205051.jpg",
       "width": 3462,
@@ -3012,9 +2917,9 @@
       "title": ""
     },
     {
-      "index": 159,
-      "id": "#159",
-      "frame": "FRM // 159",
+      "index": 154,
+      "id": "#154",
+      "frame": "FRM // 154",
       "filename": "PSX_20260712_011034.jpg",
       "src": "FOTO/PSX_20260712_011034.jpg",
       "width": 2079,
@@ -3031,9 +2936,9 @@
       "title": ""
     },
     {
-      "index": 160,
-      "id": "#160",
-      "frame": "FRM // 160",
+      "index": 155,
+      "id": "#155",
+      "frame": "FRM // 155",
       "filename": "PSX_20260712_013153.jpg",
       "src": "FOTO/PSX_20260712_013153.jpg",
       "width": 720,
@@ -3050,9 +2955,9 @@
       "title": ""
     },
     {
-      "index": 161,
-      "id": "#161",
-      "frame": "FRM // 161",
+      "index": 156,
+      "id": "#156",
+      "frame": "FRM // 156",
       "filename": "DSF8865.JPG",
       "src": "FOTO/DSF8865.JPG",
       "width": 6000,
@@ -3069,9 +2974,9 @@
       "title": ""
     },
     {
-      "index": 162,
-      "id": "#162",
-      "frame": "FRM // 162",
+      "index": 157,
+      "id": "#157",
+      "frame": "FRM // 157",
       "filename": "DSF8894.JPG",
       "src": "FOTO/DSF8894.JPG",
       "width": 6000,
@@ -3088,9 +2993,9 @@
       "title": ""
     },
     {
-      "index": 163,
-      "id": "#163",
-      "frame": "FRM // 163",
+      "index": 158,
+      "id": "#158",
+      "frame": "FRM // 158",
       "filename": "DSF8936.JPG",
       "src": "FOTO/DSF8936.JPG",
       "width": 6000,
@@ -3107,9 +3012,9 @@
       "title": ""
     },
     {
-      "index": 164,
-      "id": "#164",
-      "frame": "FRM // 164",
+      "index": 159,
+      "id": "#159",
+      "frame": "FRM // 159",
       "filename": "DSF8949.JPG",
       "src": "FOTO/DSF8949.JPG",
       "width": 6000,
@@ -3126,9 +3031,9 @@
       "title": ""
     },
     {
-      "index": 165,
-      "id": "#165",
-      "frame": "FRM // 165",
+      "index": 160,
+      "id": "#160",
+      "frame": "FRM // 160",
       "filename": "DSF8954.JPG",
       "src": "FOTO/DSF8954.JPG",
       "width": 6000,
@@ -3145,9 +3050,9 @@
       "title": ""
     },
     {
-      "index": 166,
-      "id": "#166",
-      "frame": "FRM // 166",
+      "index": 161,
+      "id": "#161",
+      "frame": "FRM // 161",
       "filename": "DSF8963.JPG",
       "src": "FOTO/DSF8963.JPG",
       "width": 6000,
@@ -3164,9 +3069,9 @@
       "title": ""
     },
     {
-      "index": 167,
-      "id": "#167",
-      "frame": "FRM // 167",
+      "index": 162,
+      "id": "#162",
+      "frame": "FRM // 162",
       "filename": "DSF8969.JPG",
       "src": "FOTO/DSF8969.JPG",
       "width": 6000,
@@ -3183,9 +3088,9 @@
       "title": ""
     },
     {
-      "index": 168,
-      "id": "#168",
-      "frame": "FRM // 168",
+      "index": 163,
+      "id": "#163",
+      "frame": "FRM // 163",
       "filename": "DSF8990.JPG",
       "src": "FOTO/DSF8990.JPG",
       "width": 6000,
@@ -3202,9 +3107,9 @@
       "title": ""
     },
     {
-      "index": 169,
-      "id": "#169",
-      "frame": "FRM // 169",
+      "index": 164,
+      "id": "#164",
+      "frame": "FRM // 164",
       "filename": "DSF8999.JPG",
       "src": "FOTO/DSF8999.JPG",
       "width": 6000,
@@ -3221,9 +3126,9 @@
       "title": ""
     },
     {
-      "index": 170,
-      "id": "#170",
-      "frame": "FRM // 170",
+      "index": 165,
+      "id": "#165",
+      "frame": "FRM // 165",
       "filename": "DSF9029.JPG",
       "src": "FOTO/DSF9029.JPG",
       "width": 6000,
@@ -3240,9 +3145,9 @@
       "title": ""
     },
     {
-      "index": 171,
-      "id": "#171",
-      "frame": "FRM // 171",
+      "index": 166,
+      "id": "#166",
+      "frame": "FRM // 166",
       "filename": "DSF9032.JPG",
       "src": "FOTO/DSF9032.JPG",
       "width": 6000,
@@ -3259,9 +3164,9 @@
       "title": ""
     },
     {
-      "index": 172,
-      "id": "#172",
-      "frame": "FRM // 172",
+      "index": 167,
+      "id": "#167",
+      "frame": "FRM // 167",
       "filename": "DSF9035.JPG",
       "src": "FOTO/DSF9035.JPG",
       "width": 6000,
@@ -3278,9 +3183,9 @@
       "title": ""
     },
     {
-      "index": 173,
-      "id": "#173",
-      "frame": "FRM // 173",
+      "index": 168,
+      "id": "#168",
+      "frame": "FRM // 168",
       "filename": "DSF9054.JPG",
       "src": "FOTO/DSF9054.JPG",
       "width": 6000,
@@ -3297,9 +3202,9 @@
       "title": ""
     },
     {
-      "index": 174,
-      "id": "#174",
-      "frame": "FRM // 174",
+      "index": 169,
+      "id": "#169",
+      "frame": "FRM // 169",
       "filename": "DSF9079.JPG",
       "src": "FOTO/DSF9079.JPG",
       "width": 6000,
@@ -3316,9 +3221,9 @@
       "title": ""
     },
     {
-      "index": 175,
-      "id": "#175",
-      "frame": "FRM // 175",
+      "index": 170,
+      "id": "#170",
+      "frame": "FRM // 170",
       "filename": "DSF9081.JPG",
       "src": "FOTO/DSF9081.JPG",
       "width": 6000,
@@ -3335,9 +3240,9 @@
       "title": ""
     },
     {
-      "index": 176,
-      "id": "#176",
-      "frame": "FRM // 176",
+      "index": 171,
+      "id": "#171",
+      "frame": "FRM // 171",
       "filename": "DSF9084.JPG",
       "src": "FOTO/DSF9084.JPG",
       "width": 6000,
@@ -3354,9 +3259,9 @@
       "title": ""
     },
     {
-      "index": 177,
-      "id": "#177",
-      "frame": "FRM // 177",
+      "index": 172,
+      "id": "#172",
+      "frame": "FRM // 172",
       "filename": "DSF9098.JPG",
       "src": "FOTO/DSF9098.JPG",
       "width": 6000,
@@ -3373,9 +3278,9 @@
       "title": ""
     },
     {
-      "index": 178,
-      "id": "#178",
-      "frame": "FRM // 178",
+      "index": 173,
+      "id": "#173",
+      "frame": "FRM // 173",
       "filename": "DSF9108.JPG",
       "src": "FOTO/DSF9108.JPG",
       "width": 6000,
@@ -3392,9 +3297,9 @@
       "title": ""
     },
     {
-      "index": 179,
-      "id": "#179",
-      "frame": "FRM // 179",
+      "index": 174,
+      "id": "#174",
+      "frame": "FRM // 174",
       "filename": "DSF9112.JPG",
       "src": "FOTO/DSF9112.JPG",
       "width": 6000,
@@ -3411,9 +3316,9 @@
       "title": ""
     },
     {
-      "index": 180,
-      "id": "#180",
-      "frame": "FRM // 180",
+      "index": 175,
+      "id": "#175",
+      "frame": "FRM // 175",
       "filename": "DSF9121.JPG",
       "src": "FOTO/DSF9121.JPG",
       "width": 6000,
@@ -3430,9 +3335,9 @@
       "title": ""
     },
     {
-      "index": 181,
-      "id": "#181",
-      "frame": "FRM // 181",
+      "index": 176,
+      "id": "#176",
+      "frame": "FRM // 176",
       "filename": "DSF9125.JPG",
       "src": "FOTO/DSF9125.JPG",
       "width": 6000,
@@ -3449,9 +3354,9 @@
       "title": ""
     },
     {
-      "index": 182,
-      "id": "#182",
-      "frame": "FRM // 182",
+      "index": 177,
+      "id": "#177",
+      "frame": "FRM // 177",
       "filename": "DSF9151.JPG",
       "src": "FOTO/DSF9151.JPG",
       "width": 5368,
@@ -3468,9 +3373,9 @@
       "title": ""
     },
     {
-      "index": 183,
-      "id": "#183",
-      "frame": "FRM // 183",
+      "index": 178,
+      "id": "#178",
+      "frame": "FRM // 178",
       "filename": "DSF9152.JPG",
       "src": "FOTO/DSF9152.JPG",
       "width": 5530,
@@ -3487,9 +3392,9 @@
       "title": ""
     },
     {
-      "index": 184,
-      "id": "#184",
-      "frame": "FRM // 184",
+      "index": 179,
+      "id": "#179",
+      "frame": "FRM // 179",
       "filename": "DSF9168.JPG",
       "src": "FOTO/DSF9168.JPG",
       "width": 6000,
@@ -3506,9 +3411,9 @@
       "title": ""
     },
     {
-      "index": 185,
-      "id": "#185",
-      "frame": "FRM // 185",
+      "index": 180,
+      "id": "#180",
+      "frame": "FRM // 180",
       "filename": "DSF9195.JPG",
       "src": "FOTO/DSF9195.JPG",
       "width": 6000,
@@ -3525,9 +3430,9 @@
       "title": ""
     },
     {
-      "index": 186,
-      "id": "#186",
-      "frame": "FRM // 186",
+      "index": 181,
+      "id": "#181",
+      "frame": "FRM // 181",
       "filename": "DSF9196.JPG",
       "src": "FOTO/DSF9196.JPG",
       "width": 5100,
@@ -3544,9 +3449,9 @@
       "title": ""
     },
     {
-      "index": 187,
-      "id": "#187",
-      "frame": "FRM // 187",
+      "index": 182,
+      "id": "#182",
+      "frame": "FRM // 182",
       "filename": "DSF9220.JPG",
       "src": "FOTO/DSF9220.JPG",
       "width": 5434,
@@ -3563,9 +3468,9 @@
       "title": ""
     },
     {
-      "index": 188,
-      "id": "#188",
-      "frame": "FRM // 188",
+      "index": 183,
+      "id": "#183",
+      "frame": "FRM // 183",
       "filename": "DSF9226.JPG",
       "src": "FOTO/DSF9226.JPG",
       "width": 5412,
@@ -3582,9 +3487,9 @@
       "title": ""
     },
     {
-      "index": 189,
-      "id": "#189",
-      "frame": "FRM // 189",
+      "index": 184,
+      "id": "#184",
+      "frame": "FRM // 184",
       "filename": "DSF9227.JPG",
       "src": "FOTO/DSF9227.JPG",
       "width": 5592,
@@ -3601,9 +3506,9 @@
       "title": ""
     },
     {
-      "index": 190,
-      "id": "#190",
-      "frame": "FRM // 190",
+      "index": 185,
+      "id": "#185",
+      "frame": "FRM // 185",
       "filename": "DSF9236.JPG",
       "src": "FOTO/DSF9236.JPG",
       "width": 5516,
@@ -3620,9 +3525,9 @@
       "title": ""
     },
     {
-      "index": 191,
-      "id": "#191",
-      "frame": "FRM // 191",
+      "index": 186,
+      "id": "#186",
+      "frame": "FRM // 186",
       "filename": "DSF9240.JPG",
       "src": "FOTO/DSF9240.JPG",
       "width": 6000,
@@ -3639,9 +3544,9 @@
       "title": ""
     },
     {
-      "index": 192,
-      "id": "#192",
-      "frame": "FRM // 192",
+      "index": 187,
+      "id": "#187",
+      "frame": "FRM // 187",
       "filename": "DSF9246.JPG",
       "src": "FOTO/DSF9246.JPG",
       "width": 6000,
@@ -3658,9 +3563,9 @@
       "title": ""
     },
     {
-      "index": 193,
-      "id": "#193",
-      "frame": "FRM // 193",
+      "index": 188,
+      "id": "#188",
+      "frame": "FRM // 188",
       "filename": "DSF9254.JPG",
       "src": "FOTO/DSF9254.JPG",
       "width": 5692,
@@ -3677,9 +3582,9 @@
       "title": ""
     },
     {
-      "index": 194,
-      "id": "#194",
-      "frame": "FRM // 194",
+      "index": 189,
+      "id": "#189",
+      "frame": "FRM // 189",
       "filename": "DSF9260.JPG",
       "src": "FOTO/DSF9260.JPG",
       "width": 4999,
@@ -3696,9 +3601,9 @@
       "title": ""
     },
     {
-      "index": 195,
-      "id": "#195",
-      "frame": "FRM // 195",
+      "index": 190,
+      "id": "#190",
+      "frame": "FRM // 190",
       "filename": "DSF9265.JPG",
       "src": "FOTO/DSF9265.JPG",
       "width": 5656,
@@ -3715,9 +3620,9 @@
       "title": ""
     },
     {
-      "index": 196,
-      "id": "#196",
-      "frame": "FRM // 196",
+      "index": 191,
+      "id": "#191",
+      "frame": "FRM // 191",
       "filename": "DSF9281.JPG",
       "src": "FOTO/DSF9281.JPG",
       "width": 4896,
@@ -3734,9 +3639,9 @@
       "title": ""
     },
     {
-      "index": 197,
-      "id": "#197",
-      "frame": "FRM // 197",
+      "index": 192,
+      "id": "#192",
+      "frame": "FRM // 192",
       "filename": "DSF9324.JPG",
       "src": "FOTO/DSF9324.JPG",
       "width": 6000,
@@ -3753,9 +3658,9 @@
       "title": ""
     },
     {
-      "index": 198,
-      "id": "#198",
-      "frame": "FRM // 198",
+      "index": 193,
+      "id": "#193",
+      "frame": "FRM // 193",
       "filename": "DSF9326.JPG",
       "src": "FOTO/DSF9326.JPG",
       "width": 6000,
@@ -3772,9 +3677,9 @@
       "title": ""
     },
     {
-      "index": 199,
-      "id": "#199",
-      "frame": "FRM // 199",
+      "index": 194,
+      "id": "#194",
+      "frame": "FRM // 194",
       "filename": "DSF9328.JPG",
       "src": "FOTO/DSF9328.JPG",
       "width": 6000,
@@ -3791,9 +3696,9 @@
       "title": ""
     },
     {
-      "index": 200,
-      "id": "#200",
-      "frame": "FRM // 200",
+      "index": 195,
+      "id": "#195",
+      "frame": "FRM // 195",
       "filename": "DSF9338.JPG",
       "src": "FOTO/DSF9338.JPG",
       "width": 6000,
@@ -3810,9 +3715,9 @@
       "title": ""
     },
     {
-      "index": 201,
-      "id": "#201",
-      "frame": "FRM // 201",
+      "index": 196,
+      "id": "#196",
+      "frame": "FRM // 196",
       "filename": "DSF9347.JPG",
       "src": "FOTO/DSF9347.JPG",
       "width": 4463,
@@ -3829,9 +3734,9 @@
       "title": ""
     },
     {
-      "index": 202,
-      "id": "#202",
-      "frame": "FRM // 202",
+      "index": 197,
+      "id": "#197",
+      "frame": "FRM // 197",
       "filename": "DSF9355.JPG",
       "src": "FOTO/DSF9355.JPG",
       "width": 5832,
@@ -3848,9 +3753,9 @@
       "title": ""
     },
     {
-      "index": 203,
-      "id": "#203",
-      "frame": "FRM // 203",
+      "index": 198,
+      "id": "#198",
+      "frame": "FRM // 198",
       "filename": "DSF9362.JPG",
       "src": "FOTO/DSF9362.JPG",
       "width": 3328,
@@ -3867,9 +3772,9 @@
       "title": ""
     },
     {
-      "index": 204,
-      "id": "#204",
-      "frame": "FRM // 204",
+      "index": 199,
+      "id": "#199",
+      "frame": "FRM // 199",
       "filename": "DSF9364.JPG",
       "src": "FOTO/DSF9364.JPG",
       "width": 6000,
@@ -3886,9 +3791,9 @@
       "title": ""
     },
     {
-      "index": 205,
-      "id": "#205",
-      "frame": "FRM // 205",
+      "index": 200,
+      "id": "#200",
+      "frame": "FRM // 200",
       "filename": "DSF9365.JPG",
       "src": "FOTO/DSF9365.JPG",
       "width": 6000,
@@ -3905,9 +3810,9 @@
       "title": ""
     },
     {
-      "index": 206,
-      "id": "#206",
-      "frame": "FRM // 206",
+      "index": 201,
+      "id": "#201",
+      "frame": "FRM // 201",
       "filename": "DSF9367.JPG",
       "src": "FOTO/DSF9367.JPG",
       "width": 4551,
@@ -3924,9 +3829,9 @@
       "title": ""
     },
     {
-      "index": 207,
-      "id": "#207",
-      "frame": "FRM // 207",
+      "index": 202,
+      "id": "#202",
+      "frame": "FRM // 202",
       "filename": "DSF9370.JPG",
       "src": "FOTO/DSF9370.JPG",
       "width": 4500,
@@ -3943,9 +3848,9 @@
       "title": ""
     },
     {
-      "index": 208,
-      "id": "#208",
-      "frame": "FRM // 208",
+      "index": 203,
+      "id": "#203",
+      "frame": "FRM // 203",
       "filename": "DSF9381.JPG",
       "src": "FOTO/DSF9381.JPG",
       "width": 5445,
@@ -3962,9 +3867,9 @@
       "title": ""
     },
     {
-      "index": 209,
-      "id": "#209",
-      "frame": "FRM // 209",
+      "index": 204,
+      "id": "#204",
+      "frame": "FRM // 204",
       "filename": "DSF9427.JPG",
       "src": "FOTO/DSF9427.JPG",
       "width": 5733,
@@ -3981,9 +3886,9 @@
       "title": ""
     },
     {
-      "index": 210,
-      "id": "#210",
-      "frame": "FRM // 210",
+      "index": 205,
+      "id": "#205",
+      "frame": "FRM // 205",
       "filename": "DSF9449.JPG",
       "src": "FOTO/DSF9449.JPG",
       "width": 6000,
@@ -4000,9 +3905,9 @@
       "title": ""
     },
     {
-      "index": 211,
-      "id": "#211",
-      "frame": "FRM // 211",
+      "index": 206,
+      "id": "#206",
+      "frame": "FRM // 206",
       "filename": "DSF9460.JPG",
       "src": "FOTO/DSF9460.JPG",
       "width": 5568,
@@ -4019,9 +3924,9 @@
       "title": ""
     },
     {
-      "index": 212,
-      "id": "#212",
-      "frame": "FRM // 212",
+      "index": 207,
+      "id": "#207",
+      "frame": "FRM // 207",
       "filename": "DSF9471.JPG",
       "src": "FOTO/DSF9471.JPG",
       "width": 5182,
@@ -4038,9 +3943,9 @@
       "title": ""
     },
     {
-      "index": 213,
-      "id": "#213",
-      "frame": "FRM // 213",
+      "index": 208,
+      "id": "#208",
+      "frame": "FRM // 208",
       "filename": "DSF9486.JPG",
       "src": "FOTO/DSF9486.JPG",
       "width": 4694,
@@ -4057,9 +3962,9 @@
       "title": ""
     },
     {
-      "index": 214,
-      "id": "#214",
-      "frame": "FRM // 214",
+      "index": 209,
+      "id": "#209",
+      "frame": "FRM // 209",
       "filename": "DSF9491.JPG",
       "src": "FOTO/DSF9491.JPG",
       "width": 5092,
@@ -4076,9 +3981,9 @@
       "title": ""
     },
     {
-      "index": 215,
-      "id": "#215",
-      "frame": "FRM // 215",
+      "index": 210,
+      "id": "#210",
+      "frame": "FRM // 210",
       "filename": "DSF9493.JPG",
       "src": "FOTO/DSF9493.JPG",
       "width": 5594,
