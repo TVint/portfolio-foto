@@ -89,6 +89,7 @@
     inspSrcPath: document.getElementById("insp-src-path"),
     inpReplaceFile: document.getElementById("inp-replace-file"),
     btnDeleteSingle: document.getElementById("btn-delete-single"),
+    btnApplyInspector: document.getElementById("btn-apply-inspector"),
 
     uploadModal: document.getElementById("upload-modal"),
     btnCloseUpload: document.getElementById("btn-close-upload"),
@@ -296,6 +297,22 @@
       state.photos = JSON.parse(JSON.stringify(window.PHOTOS_MANIFEST));
       reindexPhotos();
     }
+
+    // Restore any offline preview edits saved in localStorage
+    try {
+      const cached = localStorage.getItem(STORAGE_PREVIEW_KEY);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed.photos) && parsed.photos.length) {
+          state.photos = parsed.photos;
+          if (Array.isArray(parsed.categories) && parsed.categories.length) {
+            state.categories = parsed.categories;
+          }
+          reindexPhotos();
+          markDirty();
+        }
+      }
+    } catch (_) {}
   }
 
   // ==========================================
@@ -433,7 +450,7 @@
                 ? `<div class="frame-title-preview" title="${p.title}">“${p.title}”</div>`
                 : ""
             }
-            <div class="frame-quick-cats" onclick="event.stopPropagation()">
+            <div class="frame-quick-cats">
               ${quickCatsHtml}
             </div>
           </div>
@@ -490,7 +507,7 @@
     markDirty();
     applyFilters();
     renderAll();
-    showToast(`Scatto ${photo.id} (${photo.filename}) → ${newCat}`);
+    showToast(`✓ Scatto ${photo.id} (${photo.filename}) → ${newCat}`);
   }
 
   function movePhotoToIndex(filename, targetOneBasedIndex) {
@@ -531,9 +548,8 @@
     } catch (_) {}
 
     if (!state.online) {
-      downloadPhotosDataJs();
       clearDirty();
-      showToast("File photos-data.js generato e scaricato!");
+      showToast("✓ Modifiche salvate in locale! (Avvia Avvia-Admin.command per scrivere su disco)", 4500);
       return;
     }
 
@@ -1030,6 +1046,25 @@
     bindInspectorInput(el.inpLens, "lens");
     bindInspectorInput(el.inpShutter, "shutter");
     bindInspectorInput(el.inpIso, "iso");
+
+    // Apply inspector changes button
+    if (el.btnApplyInspector) {
+      el.btnApplyInspector.addEventListener("click", () => {
+        const photo = state.photos.find((p) => p.filename === state.activeFilename);
+        if (!photo) return;
+        photo.title = el.inpTitle.value.trim();
+        photo.frame = el.inpFrame.value.trim();
+        photo.orientation = el.inpOrientation.value;
+        photo.stock = el.inpStock.value.trim();
+        photo.lens = el.inpLens.value.trim();
+        photo.shutter = el.inpShutter.value.trim();
+        photo.iso = el.inpIso.value.trim();
+        markDirty();
+        applyFilters();
+        renderAll();
+        showToast(`✓ Modifiche applicate allo scatto ${photo.id}! Ricorda di cliccare "Salva Archivio" per rendere definitive.`);
+      });
+    }
 
     // Film Stock & Lens quick chips
     document.getElementById("preset-stocks").addEventListener("click", (e) => {
