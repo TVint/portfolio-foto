@@ -167,7 +167,8 @@
           </div>
           <img
             class="photo-card__img"
-            data-src="${photo.src}"
+            data-src="${photo.thumb || photo.src}"
+            data-full="${photo.src}"
             alt="Nicola Vianello — ${photo.frame} (${photo.category})"
             width="${photo.width}"
             height="${photo.height}"
@@ -318,7 +319,12 @@
               card.classList.add("is-loaded");
             };
             img.onerror = () => {
-              card.classList.add("is-loaded");
+              // Retry with original full resolution if thumbnail fails
+              if (img.dataset.full && img.src !== img.dataset.full) {
+                img.src = img.dataset.full;
+              } else {
+                card.classList.add("is-loaded");
+              }
             };
             img.setAttribute("src", img.dataset.src);
           } else if (img && img.complete) {
@@ -456,7 +462,7 @@
       thumb.dataset.idx = String(idx);
       thumb.setAttribute("aria-label", `Vai al fotogramma ${photo.id}`);
       thumb.innerHTML = `
-        <img src="${photo.src}" alt="${photo.frame}" loading="lazy" decoding="async" />
+        <img src="${photo.thumb || photo.src}" alt="${photo.frame}" loading="lazy" decoding="async" />
         <span class="filmstrip-thumb__num">${String(photo.index).padStart(3, "0")}</span>
       `;
       thumb.addEventListener("click", (e) => {
@@ -515,7 +521,15 @@
         { opacity: 1, scale: 1, duration: 0.28, ease: "power2.out" }
       );
     }
-    dom.lbImg.src = photo.src;
+    // Set active high-res or web-optimized display image with error fallback
+    dom.lbImg.onerror = () => {
+      if (dom.lbImg.src !== photo.src) {
+        dom.lbImg.src = photo.src;
+      }
+    };
+    // Load high-res preview image (smooth and instant)
+    dom.lbImg.src = photo.thumb || photo.src;
+    dom.lbImg.dataset.raw = photo.src;
     dom.lbImg.alt = `Nicola Vianello — ${photo.frame}`;
 
     // Highlight active thumbnail in filmstrip & center it smoothly
@@ -537,6 +551,10 @@
       dom.lbViewport.classList.add("is-zoomed");
       dom.lbZoomBtn.classList.add("is-active");
       dom.lbZoomLabel.textContent = "[ LOUPE 2.4x ]";
+      // Switch to uncompressed RAW negative on zoom
+      if (dom.lbImg.dataset.raw && dom.lbImg.src !== dom.lbImg.dataset.raw) {
+        dom.lbImg.src = dom.lbImg.dataset.raw;
+      }
       if (typeof clientX === "number" && typeof clientY === "number") {
         panLoupeToCursor(clientX, clientY);
       } else {

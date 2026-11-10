@@ -310,7 +310,7 @@
           </div>
 
           <div class="frame-thumb-wrap">
-            <img src="${p.src}" alt="${p.filename}" loading="lazy" />
+            <img src="${p.thumb || p.src}" alt="${p.filename}" loading="lazy" onerror="if(this.src!=='${p.src}')this.src='${p.src}'" />
           </div>
 
           <div class="frame-body">

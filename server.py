@@ -23,6 +23,7 @@ from datetime import datetime
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 FOTO_DIR = os.path.join(ROOT_DIR, "FOTO")
+THUMBS_DIR = os.path.join(ROOT_DIR, "THUMBS")
 JS_FILE = os.path.join(ROOT_DIR, "photos-data.js")
 JSON_DB_FILE = os.path.join(ROOT_DIR, "photos-db.json")
 BACKUP_DIR = os.path.join(ROOT_DIR, "backups")
@@ -52,6 +53,7 @@ SHUTTERS = ["1/60s", "1/125s", "1/250s", "1/500s", "1/1000s", "1/2000s", "1/4000
 ISOS = ["ISO 160", "ISO 400", "ISO 800", "ISO 1600", "ISO 3200", "ISO 6400"]
 
 os.makedirs(FOTO_DIR, exist_ok=True)
+os.makedirs(THUMBS_DIR, exist_ok=True)
 os.makedirs(BACKUP_DIR, exist_ok=True)
 os.makedirs(TRASH_DIR, exist_ok=True)
 
@@ -110,6 +112,7 @@ def build_default_photo_entry(filename, index_num, width=None, height=None, rati
         "frame": f"FRM // {index_num:03d}",
         "filename": filename,
         "src": f"FOTO/{filename}",
+        "thumb": f"THUMBS/{filename}",
         "title": "",
         "width": width,
         "height": height,
@@ -383,6 +386,18 @@ class DarkroomAdminHandler(SimpleHTTPRequestHandler):
 
                     with open(dest_path, "wb") as out_f:
                         out_f.write(binary)
+
+                    # Generate web-optimized thumbnail in THUMBS/
+                    thumb_dest = os.path.join(THUMBS_DIR, safe_name)
+                    try:
+                        subprocess.run(
+                            ["sips", "-Z", "1200", "-s", "formatOptions", "82", dest_path, "--out", thumb_dest],
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL,
+                            check=False,
+                        )
+                    except Exception:
+                        pass
 
                     entry = build_default_photo_entry(
                         safe_name,
