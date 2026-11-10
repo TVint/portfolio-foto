@@ -3177,8 +3177,8 @@ window.PHOTOS_MANIFEST = [
     "index": 177,
     "id": "#177",
     "frame": "FRM // 177",
-    "filename": "_DSF8865.JPG",
-    "src": "FOTO/_DSF8865.JPG",
+    "filename": "DSF8865.JPG",
+    "src": "FOTO/DSF8865.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3189,14 +3189,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8865.JPG"
+    "thumb": "THUMBS/DSF8865.JPG"
   },
   {
     "index": 178,
     "id": "#178",
     "frame": "FRM // 178",
-    "filename": "_DSF8894.JPG",
-    "src": "FOTO/_DSF8894.JPG",
+    "filename": "DSF8894.JPG",
+    "src": "FOTO/DSF8894.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3207,14 +3207,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8894.JPG"
+    "thumb": "THUMBS/DSF8894.JPG"
   },
   {
     "index": 179,
     "id": "#179",
     "frame": "FRM // 179",
-    "filename": "_DSF8936.JPG",
-    "src": "FOTO/_DSF8936.JPG",
+    "filename": "DSF8936.JPG",
+    "src": "FOTO/DSF8936.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3225,14 +3225,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8936.JPG"
+    "thumb": "THUMBS/DSF8936.JPG"
   },
   {
     "index": 180,
     "id": "#180",
     "frame": "FRM // 180",
-    "filename": "_DSF8949.JPG",
-    "src": "FOTO/_DSF8949.JPG",
+    "filename": "DSF8949.JPG",
+    "src": "FOTO/DSF8949.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3243,14 +3243,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8949.JPG"
+    "thumb": "THUMBS/DSF8949.JPG"
   },
   {
     "index": 181,
     "id": "#181",
     "frame": "FRM // 181",
-    "filename": "_DSF8954.JPG",
-    "src": "FOTO/_DSF8954.JPG",
+    "filename": "DSF8954.JPG",
+    "src": "FOTO/DSF8954.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3261,14 +3261,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8954.JPG"
+    "thumb": "THUMBS/DSF8954.JPG"
   },
   {
     "index": 182,
     "id": "#182",
     "frame": "FRM // 182",
-    "filename": "_DSF8963.JPG",
-    "src": "FOTO/_DSF8963.JPG",
+    "filename": "DSF8963.JPG",
+    "src": "FOTO/DSF8963.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3279,14 +3279,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8963.JPG"
+    "thumb": "THUMBS/DSF8963.JPG"
   },
   {
     "index": 183,
     "id": "#183",
     "frame": "FRM // 183",
-    "filename": "_DSF8969.JPG",
-    "src": "FOTO/_DSF8969.JPG",
+    "filename": "DSF8969.JPG",
+    "src": "FOTO/DSF8969.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3297,14 +3297,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8969.JPG"
+    "thumb": "THUMBS/DSF8969.JPG"
   },
   {
     "index": 184,
     "id": "#184",
     "frame": "FRM // 184",
-    "filename": "_DSF8990.JPG",
-    "src": "FOTO/_DSF8990.JPG",
+    "filename": "DSF8990.JPG",
+    "src": "FOTO/DSF8990.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3315,14 +3315,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8990.JPG"
+    "thumb": "THUMBS/DSF8990.JPG"
   },
   {
     "index": 185,
     "id": "#185",
     "frame": "FRM // 185",
-    "filename": "_DSF8999.JPG",
-    "src": "FOTO/_DSF8999.JPG",
+    "filename": "DSF8999.JPG",
+    "src": "FOTO/DSF8999.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3333,14 +3333,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF8999.JPG"
+    "thumb": "THUMBS/DSF8999.JPG"
   },
   {
     "index": 186,
     "id": "#186",
     "frame": "FRM // 186",
-    "filename": "_DSF9029.JPG",
-    "src": "FOTO/_DSF9029.JPG",
+    "filename": "DSF9029.JPG",
+    "src": "FOTO/DSF9029.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3351,14 +3351,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9029.JPG"
+    "thumb": "THUMBS/DSF9029.JPG"
   },
   {
     "index": 187,
     "id": "#187",
     "frame": "FRM // 187",
-    "filename": "_DSF9032.JPG",
-    "src": "FOTO/_DSF9032.JPG",
+    "filename": "DSF9032.JPG",
+    "src": "FOTO/DSF9032.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3369,14 +3369,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9032.JPG"
+    "thumb": "THUMBS/DSF9032.JPG"
   },
   {
     "index": 188,
     "id": "#188",
     "frame": "FRM // 188",
-    "filename": "_DSF9035.JPG",
-    "src": "FOTO/_DSF9035.JPG",
+    "filename": "DSF9035.JPG",
+    "src": "FOTO/DSF9035.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3387,14 +3387,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9035.JPG"
+    "thumb": "THUMBS/DSF9035.JPG"
   },
   {
     "index": 189,
     "id": "#189",
     "frame": "FRM // 189",
-    "filename": "_DSF9054.JPG",
-    "src": "FOTO/_DSF9054.JPG",
+    "filename": "DSF9054.JPG",
+    "src": "FOTO/DSF9054.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3405,14 +3405,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9054.JPG"
+    "thumb": "THUMBS/DSF9054.JPG"
   },
   {
     "index": 190,
     "id": "#190",
     "frame": "FRM // 190",
-    "filename": "_DSF9079.JPG",
-    "src": "FOTO/_DSF9079.JPG",
+    "filename": "DSF9079.JPG",
+    "src": "FOTO/DSF9079.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3423,14 +3423,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9079.JPG"
+    "thumb": "THUMBS/DSF9079.JPG"
   },
   {
     "index": 191,
     "id": "#191",
     "frame": "FRM // 191",
-    "filename": "_DSF9081.JPG",
-    "src": "FOTO/_DSF9081.JPG",
+    "filename": "DSF9081.JPG",
+    "src": "FOTO/DSF9081.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3441,14 +3441,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9081.JPG"
+    "thumb": "THUMBS/DSF9081.JPG"
   },
   {
     "index": 192,
     "id": "#192",
     "frame": "FRM // 192",
-    "filename": "_DSF9084.JPG",
-    "src": "FOTO/_DSF9084.JPG",
+    "filename": "DSF9084.JPG",
+    "src": "FOTO/DSF9084.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3459,14 +3459,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9084.JPG"
+    "thumb": "THUMBS/DSF9084.JPG"
   },
   {
     "index": 193,
     "id": "#193",
     "frame": "FRM // 193",
-    "filename": "_DSF9098.JPG",
-    "src": "FOTO/_DSF9098.JPG",
+    "filename": "DSF9098.JPG",
+    "src": "FOTO/DSF9098.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3477,14 +3477,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9098.JPG"
+    "thumb": "THUMBS/DSF9098.JPG"
   },
   {
     "index": 194,
     "id": "#194",
     "frame": "FRM // 194",
-    "filename": "_DSF9108.JPG",
-    "src": "FOTO/_DSF9108.JPG",
+    "filename": "DSF9108.JPG",
+    "src": "FOTO/DSF9108.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3495,14 +3495,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9108.JPG"
+    "thumb": "THUMBS/DSF9108.JPG"
   },
   {
     "index": 195,
     "id": "#195",
     "frame": "FRM // 195",
-    "filename": "_DSF9112.JPG",
-    "src": "FOTO/_DSF9112.JPG",
+    "filename": "DSF9112.JPG",
+    "src": "FOTO/DSF9112.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3513,14 +3513,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9112.JPG"
+    "thumb": "THUMBS/DSF9112.JPG"
   },
   {
     "index": 196,
     "id": "#196",
     "frame": "FRM // 196",
-    "filename": "_DSF9121.JPG",
-    "src": "FOTO/_DSF9121.JPG",
+    "filename": "DSF9121.JPG",
+    "src": "FOTO/DSF9121.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3531,14 +3531,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9121.JPG"
+    "thumb": "THUMBS/DSF9121.JPG"
   },
   {
     "index": 197,
     "id": "#197",
     "frame": "FRM // 197",
-    "filename": "_DSF9125.JPG",
-    "src": "FOTO/_DSF9125.JPG",
+    "filename": "DSF9125.JPG",
+    "src": "FOTO/DSF9125.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3549,14 +3549,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9125.JPG"
+    "thumb": "THUMBS/DSF9125.JPG"
   },
   {
     "index": 198,
     "id": "#198",
     "frame": "FRM // 198",
-    "filename": "_DSF9151.JPG",
-    "src": "FOTO/_DSF9151.JPG",
+    "filename": "DSF9151.JPG",
+    "src": "FOTO/DSF9151.JPG",
     "width": 5368,
     "height": 2892,
     "aspectRatio": 1.8562,
@@ -3567,14 +3567,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9151.JPG"
+    "thumb": "THUMBS/DSF9151.JPG"
   },
   {
     "index": 199,
     "id": "#199",
     "frame": "FRM // 199",
-    "filename": "_DSF9152.JPG",
-    "src": "FOTO/_DSF9152.JPG",
+    "filename": "DSF9152.JPG",
+    "src": "FOTO/DSF9152.JPG",
     "width": 5530,
     "height": 3297,
     "aspectRatio": 1.6773,
@@ -3585,14 +3585,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9152.JPG"
+    "thumb": "THUMBS/DSF9152.JPG"
   },
   {
     "index": 200,
     "id": "#200",
     "frame": "FRM // 200",
-    "filename": "_DSF9168.JPG",
-    "src": "FOTO/_DSF9168.JPG",
+    "filename": "DSF9168.JPG",
+    "src": "FOTO/DSF9168.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3603,14 +3603,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9168.JPG"
+    "thumb": "THUMBS/DSF9168.JPG"
   },
   {
     "index": 201,
     "id": "#201",
     "frame": "FRM // 201",
-    "filename": "_DSF9195.JPG",
-    "src": "FOTO/_DSF9195.JPG",
+    "filename": "DSF9195.JPG",
+    "src": "FOTO/DSF9195.JPG",
     "width": 6000,
     "height": 3317,
     "aspectRatio": 1.8089,
@@ -3621,14 +3621,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9195.JPG"
+    "thumb": "THUMBS/DSF9195.JPG"
   },
   {
     "index": 202,
     "id": "#202",
     "frame": "FRM // 202",
-    "filename": "_DSF9196.JPG",
-    "src": "FOTO/_DSF9196.JPG",
+    "filename": "DSF9196.JPG",
+    "src": "FOTO/DSF9196.JPG",
     "width": 5100,
     "height": 2694,
     "aspectRatio": 1.8931,
@@ -3639,14 +3639,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9196.JPG"
+    "thumb": "THUMBS/DSF9196.JPG"
   },
   {
     "index": 203,
     "id": "#203",
     "frame": "FRM // 203",
-    "filename": "_DSF9220.JPG",
-    "src": "FOTO/_DSF9220.JPG",
+    "filename": "DSF9220.JPG",
+    "src": "FOTO/DSF9220.JPG",
     "width": 5434,
     "height": 3376,
     "aspectRatio": 1.6096,
@@ -3657,14 +3657,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9220.JPG"
+    "thumb": "THUMBS/DSF9220.JPG"
   },
   {
     "index": 204,
     "id": "#204",
     "frame": "FRM // 204",
-    "filename": "_DSF9226.JPG",
-    "src": "FOTO/_DSF9226.JPG",
+    "filename": "DSF9226.JPG",
+    "src": "FOTO/DSF9226.JPG",
     "width": 5412,
     "height": 2930,
     "aspectRatio": 1.8471,
@@ -3675,14 +3675,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9226.JPG"
+    "thumb": "THUMBS/DSF9226.JPG"
   },
   {
     "index": 205,
     "id": "#205",
     "frame": "FRM // 205",
-    "filename": "_DSF9227.JPG",
-    "src": "FOTO/_DSF9227.JPG",
+    "filename": "DSF9227.JPG",
+    "src": "FOTO/DSF9227.JPG",
     "width": 5592,
     "height": 3376,
     "aspectRatio": 1.6564,
@@ -3693,14 +3693,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9227.JPG"
+    "thumb": "THUMBS/DSF9227.JPG"
   },
   {
     "index": 206,
     "id": "#206",
     "frame": "FRM // 206",
-    "filename": "_DSF9236.JPG",
-    "src": "FOTO/_DSF9236.JPG",
+    "filename": "DSF9236.JPG",
+    "src": "FOTO/DSF9236.JPG",
     "width": 5516,
     "height": 3307,
     "aspectRatio": 1.668,
@@ -3711,14 +3711,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9236.JPG"
+    "thumb": "THUMBS/DSF9236.JPG"
   },
   {
     "index": 207,
     "id": "#207",
     "frame": "FRM // 207",
-    "filename": "_DSF9240.JPG",
-    "src": "FOTO/_DSF9240.JPG",
+    "filename": "DSF9240.JPG",
+    "src": "FOTO/DSF9240.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3729,14 +3729,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9240.JPG"
+    "thumb": "THUMBS/DSF9240.JPG"
   },
   {
     "index": 208,
     "id": "#208",
     "frame": "FRM // 208",
-    "filename": "_DSF9246.JPG",
-    "src": "FOTO/_DSF9246.JPG",
+    "filename": "DSF9246.JPG",
+    "src": "FOTO/DSF9246.JPG",
     "width": 6000,
     "height": 1825,
     "aspectRatio": 3.2877,
@@ -3747,14 +3747,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9246.JPG"
+    "thumb": "THUMBS/DSF9246.JPG"
   },
   {
     "index": 209,
     "id": "#209",
     "frame": "FRM // 209",
-    "filename": "_DSF9254.JPG",
-    "src": "FOTO/_DSF9254.JPG",
+    "filename": "DSF9254.JPG",
+    "src": "FOTO/DSF9254.JPG",
     "width": 5692,
     "height": 2835,
     "aspectRatio": 2.0078,
@@ -3765,14 +3765,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9254.JPG"
+    "thumb": "THUMBS/DSF9254.JPG"
   },
   {
     "index": 210,
     "id": "#210",
     "frame": "FRM // 210",
-    "filename": "_DSF9260.JPG",
-    "src": "FOTO/_DSF9260.JPG",
+    "filename": "DSF9260.JPG",
+    "src": "FOTO/DSF9260.JPG",
     "width": 4999,
     "height": 3376,
     "aspectRatio": 1.4807,
@@ -3783,14 +3783,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9260.JPG"
+    "thumb": "THUMBS/DSF9260.JPG"
   },
   {
     "index": 211,
     "id": "#211",
     "frame": "FRM // 211",
-    "filename": "_DSF9265.JPG",
-    "src": "FOTO/_DSF9265.JPG",
+    "filename": "DSF9265.JPG",
+    "src": "FOTO/DSF9265.JPG",
     "width": 5656,
     "height": 3163,
     "aspectRatio": 1.7882,
@@ -3801,14 +3801,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9265.JPG"
+    "thumb": "THUMBS/DSF9265.JPG"
   },
   {
     "index": 212,
     "id": "#212",
     "frame": "FRM // 212",
-    "filename": "_DSF9281.JPG",
-    "src": "FOTO/_DSF9281.JPG",
+    "filename": "DSF9281.JPG",
+    "src": "FOTO/DSF9281.JPG",
     "width": 4896,
     "height": 2656,
     "aspectRatio": 1.8434,
@@ -3819,14 +3819,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9281.JPG"
+    "thumb": "THUMBS/DSF9281.JPG"
   },
   {
     "index": 213,
     "id": "#213",
     "frame": "FRM // 213",
-    "filename": "_DSF9324.JPG",
-    "src": "FOTO/_DSF9324.JPG",
+    "filename": "DSF9324.JPG",
+    "src": "FOTO/DSF9324.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3837,14 +3837,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9324.JPG"
+    "thumb": "THUMBS/DSF9324.JPG"
   },
   {
     "index": 214,
     "id": "#214",
     "frame": "FRM // 214",
-    "filename": "_DSF9326.JPG",
-    "src": "FOTO/_DSF9326.JPG",
+    "filename": "DSF9326.JPG",
+    "src": "FOTO/DSF9326.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3855,14 +3855,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9326.JPG"
+    "thumb": "THUMBS/DSF9326.JPG"
   },
   {
     "index": 215,
     "id": "#215",
     "frame": "FRM // 215",
-    "filename": "_DSF9328.JPG",
-    "src": "FOTO/_DSF9328.JPG",
+    "filename": "DSF9328.JPG",
+    "src": "FOTO/DSF9328.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3873,14 +3873,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9328.JPG"
+    "thumb": "THUMBS/DSF9328.JPG"
   },
   {
     "index": 216,
     "id": "#216",
     "frame": "FRM // 216",
-    "filename": "_DSF9338.JPG",
-    "src": "FOTO/_DSF9338.JPG",
+    "filename": "DSF9338.JPG",
+    "src": "FOTO/DSF9338.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3891,14 +3891,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9338.JPG"
+    "thumb": "THUMBS/DSF9338.JPG"
   },
   {
     "index": 217,
     "id": "#217",
     "frame": "FRM // 217",
-    "filename": "_DSF9347.JPG",
-    "src": "FOTO/_DSF9347.JPG",
+    "filename": "DSF9347.JPG",
+    "src": "FOTO/DSF9347.JPG",
     "width": 4463,
     "height": 2914,
     "aspectRatio": 1.5316,
@@ -3909,14 +3909,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9347.JPG"
+    "thumb": "THUMBS/DSF9347.JPG"
   },
   {
     "index": 218,
     "id": "#218",
     "frame": "FRM // 218",
-    "filename": "_DSF9355.JPG",
-    "src": "FOTO/_DSF9355.JPG",
+    "filename": "DSF9355.JPG",
+    "src": "FOTO/DSF9355.JPG",
     "width": 5832,
     "height": 2269,
     "aspectRatio": 2.5703,
@@ -3927,14 +3927,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9355.JPG"
+    "thumb": "THUMBS/DSF9355.JPG"
   },
   {
     "index": 219,
     "id": "#219",
     "frame": "FRM // 219",
-    "filename": "_DSF9362.JPG",
-    "src": "FOTO/_DSF9362.JPG",
+    "filename": "DSF9362.JPG",
+    "src": "FOTO/DSF9362.JPG",
     "width": 3328,
     "height": 2718,
     "aspectRatio": 1.2244,
@@ -3945,14 +3945,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9362.JPG"
+    "thumb": "THUMBS/DSF9362.JPG"
   },
   {
     "index": 220,
     "id": "#220",
     "frame": "FRM // 220",
-    "filename": "_DSF9364.JPG",
-    "src": "FOTO/_DSF9364.JPG",
+    "filename": "DSF9364.JPG",
+    "src": "FOTO/DSF9364.JPG",
     "width": 6000,
     "height": 2721,
     "aspectRatio": 2.2051,
@@ -3963,14 +3963,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9364.JPG"
+    "thumb": "THUMBS/DSF9364.JPG"
   },
   {
     "index": 221,
     "id": "#221",
     "frame": "FRM // 221",
-    "filename": "_DSF9365.JPG",
-    "src": "FOTO/_DSF9365.JPG",
+    "filename": "DSF9365.JPG",
+    "src": "FOTO/DSF9365.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -3981,14 +3981,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9365.JPG"
+    "thumb": "THUMBS/DSF9365.JPG"
   },
   {
     "index": 222,
     "id": "#222",
     "frame": "FRM // 222",
-    "filename": "_DSF9367.JPG",
-    "src": "FOTO/_DSF9367.JPG",
+    "filename": "DSF9367.JPG",
+    "src": "FOTO/DSF9367.JPG",
     "width": 4551,
     "height": 2040,
     "aspectRatio": 2.2309,
@@ -3999,14 +3999,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9367.JPG"
+    "thumb": "THUMBS/DSF9367.JPG"
   },
   {
     "index": 223,
     "id": "#223",
     "frame": "FRM // 223",
-    "filename": "_DSF9370.JPG",
-    "src": "FOTO/_DSF9370.JPG",
+    "filename": "DSF9370.JPG",
+    "src": "FOTO/DSF9370.JPG",
     "width": 4500,
     "height": 2316,
     "aspectRatio": 1.943,
@@ -4017,14 +4017,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9370.JPG"
+    "thumb": "THUMBS/DSF9370.JPG"
   },
   {
     "index": 224,
     "id": "#224",
     "frame": "FRM // 224",
-    "filename": "_DSF9381.JPG",
-    "src": "FOTO/_DSF9381.JPG",
+    "filename": "DSF9381.JPG",
+    "src": "FOTO/DSF9381.JPG",
     "width": 5445,
     "height": 2859,
     "aspectRatio": 1.9045,
@@ -4035,14 +4035,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9381.JPG"
+    "thumb": "THUMBS/DSF9381.JPG"
   },
   {
     "index": 225,
     "id": "#225",
     "frame": "FRM // 225",
-    "filename": "_DSF9427.JPG",
-    "src": "FOTO/_DSF9427.JPG",
+    "filename": "DSF9427.JPG",
+    "src": "FOTO/DSF9427.JPG",
     "width": 5733,
     "height": 2314,
     "aspectRatio": 2.4775,
@@ -4053,14 +4053,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/500s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9427.JPG"
+    "thumb": "THUMBS/DSF9427.JPG"
   },
   {
     "index": 226,
     "id": "#226",
     "frame": "FRM // 226",
-    "filename": "_DSF9449.JPG",
-    "src": "FOTO/_DSF9449.JPG",
+    "filename": "DSF9449.JPG",
+    "src": "FOTO/DSF9449.JPG",
     "width": 6000,
     "height": 3376,
     "aspectRatio": 1.7773,
@@ -4071,14 +4071,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/250s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9449.JPG"
+    "thumb": "THUMBS/DSF9449.JPG"
   },
   {
     "index": 227,
     "id": "#227",
     "frame": "FRM // 227",
-    "filename": "_DSF9460.JPG",
-    "src": "FOTO/_DSF9460.JPG",
+    "filename": "DSF9460.JPG",
+    "src": "FOTO/DSF9460.JPG",
     "width": 5568,
     "height": 3265,
     "aspectRatio": 1.7054,
@@ -4089,14 +4089,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/125s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9460.JPG"
+    "thumb": "THUMBS/DSF9460.JPG"
   },
   {
     "index": 228,
     "id": "#228",
     "frame": "FRM // 228",
-    "filename": "_DSF9471.JPG",
-    "src": "FOTO/_DSF9471.JPG",
+    "filename": "DSF9471.JPG",
+    "src": "FOTO/DSF9471.JPG",
     "width": 5182,
     "height": 3376,
     "aspectRatio": 1.535,
@@ -4107,14 +4107,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/60s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9471.JPG"
+    "thumb": "THUMBS/DSF9471.JPG"
   },
   {
     "index": 229,
     "id": "#229",
     "frame": "FRM // 229",
-    "filename": "_DSF9486.JPG",
-    "src": "FOTO/_DSF9486.JPG",
+    "filename": "DSF9486.JPG",
+    "src": "FOTO/DSF9486.JPG",
     "width": 4694,
     "height": 3260,
     "aspectRatio": 1.4399,
@@ -4125,14 +4125,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/2000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9486.JPG"
+    "thumb": "THUMBS/DSF9486.JPG"
   },
   {
     "index": 230,
     "id": "#230",
     "frame": "FRM // 230",
-    "filename": "_DSF9491.JPG",
-    "src": "FOTO/_DSF9491.JPG",
+    "filename": "DSF9491.JPG",
+    "src": "FOTO/DSF9491.JPG",
     "width": 5092,
     "height": 3162,
     "aspectRatio": 1.6104,
@@ -4143,14 +4143,14 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/30s",
     "iso": "ISO 160",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9491.JPG"
+    "thumb": "THUMBS/DSF9491.JPG"
   },
   {
     "index": 231,
     "id": "#231",
     "frame": "FRM // 231",
-    "filename": "_DSF9493.JPG",
-    "src": "FOTO/_DSF9493.JPG",
+    "filename": "DSF9493.JPG",
+    "src": "FOTO/DSF9493.JPG",
     "width": 5594,
     "height": 3309,
     "aspectRatio": 1.6905,
@@ -4161,6 +4161,6 @@ window.PHOTOS_MANIFEST = [
     "shutter": "1/1000s",
     "iso": "ISO 1600",
     "luminance": 0.5,
-    "thumb": "THUMBS/_DSF9493.JPG"
+    "thumb": "THUMBS/DSF9493.JPG"
   }
 ];
