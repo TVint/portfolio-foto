@@ -230,8 +230,37 @@ def save_manifest_data(data):
     return payload
 
 
+def generate_thumbnail(filename, force=False):
+    """Generate or update web-optimized thumbnail in THUMBS/ from FOTO/."""
+    src_path = os.path.join(FOTO_DIR, filename)
+    thumb_path = os.path.join(THUMBS_DIR, filename)
+    if not os.path.exists(src_path):
+        return False
+
+    # Check if thumbnail needs regeneration (missing, forced, or source file is newer)
+    if force or not os.path.exists(thumb_path) or os.path.getmtime(src_path) > os.path.getmtime(thumb_path):
+        try:
+            subprocess.run(
+                ["sips", "-Z", "1200", "-s", "formatOptions", "82", src_path, "--out", thumb_path],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                check=False,
+            )
+            return True
+        except Exception:
+            pass
+    return False
+
+
 def rescan_foto_folder():
-    """Synchronize FOTO/ folder with manifest without losing curatorial edits."""
+    """
+    Synchronize FOTO/ folder with manifest:
+    - Adds newly discovered files
+    - Removes missing files
+    - RE-INSPECTS real pixel dimensions & orientation for modified/cropped files
+    - Regenerates updated thumbnails in THUMBS/ with cache busting
+    - Preserves custom titles, categories, ordering and curatorial notes!
+    """
     current_data = load_manifest_data()
     existing_photos = current_data.get("photos", [])
     existing_by_filename = {p["filename"]: p for p in existing_photos if "filename" in p}
@@ -247,17 +276,41 @@ def rescan_foto_folder():
     )
     disk_set = set(disk_files)
 
-    # Keep existing order for files still on disk
     merged_photos = []
+    updated_meta_count = 0
+
+    # 1. Update existing photos still on disk
     for p in existing_photos:
         fn = p.get("filename")
         if fn in disk_set:
+            disk_path = os.path.join(FOTO_DIR, fn)
+            # Re-read actual width, height, ratio and orientation from disk
+            w, h, ratio, orient = inspect_single_image(disk_path)
+            
+            # Check if dimensions or orientation have changed (e.g. crop or rotation)
+            dim_changed = (p.get("width") != w or p.get("height") != h or p.get("orientation") != orient)
+            thumb_updated = generate_thumbnail(fn, force=dim_changed)
+
+            if dim_changed or thumb_updated:
+                p["width"] = w
+                p["height"] = h
+                p["aspectRatio"] = ratio
+                p["orientation"] = orient
+                # Append timestamp query to prevent browser caching of old crop/rotation
+                p["thumb"] = f"THUMBS/{fn}?v={int(time.time())}"
+                p["src"] = f"FOTO/{fn}?v={int(time.time())}"
+                updated_meta_count += 1
+            else:
+                p["thumb"] = f"THUMBS/{fn}"
+                p["src"] = f"FOTO/{fn}"
+
             merged_photos.append(p)
 
-    # Append newly discovered files on disk
+    # 2. Append newly discovered files on disk
     added_count = 0
     for fn in disk_files:
         if fn not in existing_by_filename:
+            generate_thumbnail(fn, force=True)
             new_entry = build_default_photo_entry(fn, len(merged_photos) + 1)
             merged_photos.append(new_entry)
             added_count += 1
@@ -266,10 +319,23 @@ def rescan_foto_folder():
     saved = save_manifest_data(
         {"categories": current_data.get("categories", DEFAULT_CATEGORIES), "photos": merged_photos}
     )
+
+    msg_parts = []
+    if updated_meta_count > 0:
+        msg_parts.append(f"{updated_meta_count} foto aggiornate (nuovo ritaglio/orientamento)")
+    if added_count > 0:
+        msg_parts.append(f"+{added_count} nuovi scatti")
+    if removed_count > 0:
+        msg_parts.append(f"-{removed_count} rimossi")
+    if not msg_parts:
+        msg_parts.append("tutte le foto e i provini sono già allineati")
+
     return {
         "added": added_count,
         "removed": max(0, removed_count),
+        "updated": updated_meta_count,
         "total": len(saved["photos"]),
+        "message": f"Sincronizzazione completata: {', '.join(msg_parts)}. Totale: {len(saved['photos'])} scatti.",
         "data": saved,
     }
 
