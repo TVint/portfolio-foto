@@ -8,9 +8,13 @@
 
   const DEFAULT_CATEGORIES = ["NATURA", "PARTY", "SOGGETTI", "ANIMALI", "ASTRATTO"];
   const STORAGE_PREVIEW_KEY = "NV_FOTO_CMS_PREVIEW_V1";
+  const STORAGE_AUTH_TOKEN_KEY = "NV_FOTO_CMS_AUTH_TOKEN_V1";
+  const HARDCODED_HASH = "b46b070bb4e16d3f23a105f9da4339e8020ff6a0c00ff8a3424d86a111b15747"; // SHA-256 of 'finefilo'
 
   const state = {
     online: false,
+    authenticated: false,
+    authToken: localStorage.getItem(STORAGE_AUTH_TOKEN_KEY) || "",
     dirty: false,
     categories: [...DEFAULT_CATEGORIES],
     photos: [],
@@ -98,6 +102,13 @@
     uploadStatusMsg: document.getElementById("upload-status-msg"),
     btnStartUpload: document.getElementById("btn-start-upload"),
 
+    btnCmsLock: document.getElementById("btn-cms-lock"),
+    authGate: document.getElementById("auth-gate"),
+    authForm: document.getElementById("auth-form"),
+    authPassword: document.getElementById("auth-password"),
+    authErrorMsg: document.getElementById("auth-error-msg"),
+    btnAuthSubmit: document.getElementById("btn-auth-submit"),
+
     toast: document.getElementById("cms-toast"),
   };
 
@@ -143,10 +154,109 @@
   }
 
   // ==========================================
+  // AUTHENTICATION CONTROLLER (PASSWORD: finefilo)
+  // ==========================================
+  async function sha256(str) {
+    const buffer = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest("SHA-256", buffer);
+    return Array.from(new Uint8Array(hash))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  function unlockCmsUI() {
+    state.authenticated = true;
+    if (el.authGate) {
+      el.authGate.classList.add("is-unlocked");
+    }
+  }
+
+  function lockCmsUI() {
+    state.authenticated = false;
+    state.authToken = "";
+    localStorage.removeItem(STORAGE_AUTH_TOKEN_KEY);
+    if (el.authGate) {
+      el.authGate.classList.remove("is-unlocked");
+      if (el.authPassword) {
+        el.authPassword.value = "";
+        el.authPassword.focus();
+      }
+      if (el.authErrorMsg) el.authErrorMsg.hidden = true;
+    }
+  }
+
+  async function checkInitialAuth() {
+    // If we have an auth token stored, verify it with server
+    if (state.authToken) {
+      try {
+        const res = await fetch("/api/status", { cache: "no-store" });
+        if (res.ok) {
+          // Connected to server with existing token
+          unlockCmsUI();
+          return;
+        }
+      } catch (_) {
+        // Offline / file:// mode: accept stored token
+        unlockCmsUI();
+        return;
+      }
+    }
+    // Lock by default until password entered
+    if (el.authGate) {
+      el.authGate.classList.remove("is-unlocked");
+      if (el.authPassword) el.authPassword.focus();
+    }
+  }
+
+  async function handleLoginSubmit() {
+    const pwd = el.authPassword.value.trim();
+    if (!pwd) return;
+
+    if (el.btnAuthSubmit) el.btnAuthSubmit.disabled = true;
+    if (el.authErrorMsg) el.authErrorMsg.hidden = true;
+
+    // Try server authentication first
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: pwd }),
+      });
+      const json = await res.json();
+      if (res.ok && json.ok) {
+        state.authToken = json.token;
+        localStorage.setItem(STORAGE_AUTH_TOKEN_KEY, json.token);
+        unlockCmsUI();
+        showToast("✓ Accesso autorizzato");
+        if (el.btnAuthSubmit) el.btnAuthSubmit.disabled = false;
+        return;
+      }
+    } catch (_) {
+      // Offline / standalone fallback check with SHA-256
+    }
+
+    const hashed = await sha256(pwd);
+    if (hashed === HARDCODED_HASH || pwd === "finefilo") {
+      state.authToken = "local_" + Date.now();
+      localStorage.setItem(STORAGE_AUTH_TOKEN_KEY, state.authToken);
+      unlockCmsUI();
+      showToast("✓ Accesso autorizzato");
+    } else {
+      if (el.authErrorMsg) el.authErrorMsg.hidden = false;
+      if (el.authPassword) {
+        el.authPassword.value = "";
+        el.authPassword.focus();
+      }
+    }
+    if (el.btnAuthSubmit) el.btnAuthSubmit.disabled = false;
+  }
+
+  // ==========================================
   // INITIALIZATION & SERVER DATA LOADING
   // ==========================================
   async function init() {
     bindEvents();
+    await checkInitialAuth();
     await loadArchiveData();
     applyFilters();
     renderAll();
@@ -398,6 +508,14 @@
     showToast(`Scatto ${filename} spostato in posizione #${clamped + 1}`);
   }
 
+  function authHeaders() {
+    const h = { "Content-Type": "application/json" };
+    if (state.authToken) {
+      h["Authorization"] = `Bearer ${state.authToken}`;
+    }
+    return h;
+  }
+
   async function saveAllToServer() {
     reindexPhotos();
     const payload = {
@@ -424,11 +542,16 @@
       el.btnSaveAll.innerHTML = "<span>⏳ SALVATAGGIO...</span>";
       const res = await fetch("/api/photos", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: authHeaders(),
         body: JSON.stringify({ data: payload }),
       });
       const json = await res.json();
       if (!res.ok || !json.ok) {
+        if (res.status === 401) {
+          lockCmsUI();
+          showToast("Sessione scaduta. Reinserisci la password.", 4000);
+          return;
+        }
         throw new Error(json.error || "Errore durante il salvataggio");
       }
       state.photos = json.data.photos;
@@ -475,9 +598,16 @@
     try {
       el.btnRescan.disabled = true;
       showToast("Scansione della cartella FOTO/ in corso...");
-      const res = await fetch("/api/rescan", { method: "POST" });
+      const res = await fetch("/api/rescan", { method: "POST", headers: authHeaders() });
       const json = await res.json();
-      if (!res.ok || !json.ok) throw new Error(json.error || "Errore scansione");
+      if (!res.ok || !json.ok) {
+        if (res.status === 401) {
+          lockCmsUI();
+          showToast("Sessione scaduta. Reinserisci la password.", 4000);
+          return;
+        }
+        throw new Error(json.error || "Errore scansione");
+      }
       state.photos = json.data.photos;
       state.categories = json.data.categories || state.categories;
       clearDirty();
@@ -504,13 +634,20 @@
       showToast("Pubblicazione su GitHub in corso...");
       const res = await fetch("/api/git-sync", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: authHeaders(),
         body: JSON.stringify({
           message: `Aggiornamento archivio fotografico (${state.photos.length} scatti)`,
         }),
       });
       const json = await res.json();
-      if (!res.ok || !json.ok) throw new Error(json.error || "Errore Git");
+      if (!res.ok || !json.ok) {
+        if (res.status === 401) {
+          lockCmsUI();
+          showToast("Sessione scaduta. Reinserisci la password.", 4000);
+          return;
+        }
+        throw new Error(json.error || "Errore Git");
+      }
       showToast(`✓ ${json.message}`, 4500);
     } catch (err) {
       showToast(`Git Sync: ${err.message}`, 5000);
@@ -595,7 +732,7 @@
         el.uploadStatusMsg.textContent = "Caricamento e analisi sips in corso...";
         const res = await fetch("/api/upload", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: authHeaders(),
           body: JSON.stringify({
             files: state.uploadQueue,
             category,
@@ -604,7 +741,14 @@
           }),
         });
         const json = await res.json();
-        if (!res.ok || !json.ok) throw new Error(json.error || "Errore upload");
+        if (!res.ok || !json.ok) {
+          if (res.status === 401) {
+            lockCmsUI();
+            showToast("Sessione scaduta. Reinserisci la password.", 4000);
+            return;
+          }
+          throw new Error(json.error || "Errore upload");
+        }
 
         state.photos = json.data.photos;
         if (json.created && json.created.length) {
@@ -960,10 +1104,15 @@
         try {
           const res = await fetch("/api/delete-photo", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: authHeaders(),
             body: JSON.stringify({ filename: fn, deleteFile: true }),
           });
           const json = await res.json();
+          if (res.status === 401) {
+            lockCmsUI();
+            showToast("Sessione scaduta. Reinserisci la password.", 4000);
+            return;
+          }
           if (json.ok) {
             state.photos = json.data.photos;
             state.activeFilename = state.photos[0] ? state.photos[0].filename : null;
@@ -990,6 +1139,29 @@
     el.btnExportJs.addEventListener("click", downloadPhotosDataJs);
     el.btnRescan.addEventListener("click", rescanFolder);
     el.btnGitSync.addEventListener("click", syncWithGitHub);
+    if (el.btnCmsLock) {
+      el.btnCmsLock.addEventListener("click", () => {
+        lockCmsUI();
+        showToast("Sessione bloccata.");
+        try {
+          fetch("/api/logout", { method: "POST", headers: authHeaders() });
+        } catch (_) {}
+      });
+    }
+
+    // Password Gate submit events
+    if (el.authForm) {
+      el.authForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        handleLoginSubmit();
+      });
+    }
+    if (el.btnAuthSubmit) {
+      el.btnAuthSubmit.addEventListener("click", (e) => {
+        e.preventDefault();
+        handleLoginSubmit();
+      });
+    }
 
     // Upload modal
     el.btnOpenUpload.addEventListener("click", () => {

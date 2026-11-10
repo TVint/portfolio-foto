@@ -52,6 +52,9 @@
       <button class="btn btn-git" id="btn-git-sync" title="Esegui commit e push su GitHub">
         <span>☁ GITHUB SYNC</span>
       </button>
+      <button class="btn btn-ghost btn-sm" id="btn-cms-lock" title="Blocca sessione admin" style="color:var(--text-silver);">
+        <span>🔒 ESCI</span>
+      </button>
       <a href="index.html" target="_blank" class="btn btn-live">
         <span>👁 SITO LIVE ↗</span>
       </a>
@@ -344,6 +347,38 @@
 
   <!-- TOAST NOTIFICATION -->
   <div class="cms-toast" id="cms-toast" hidden></div>
+
+  <!-- PASSWORD GATE OVERLAY -->
+  <div class="cms-auth-gate" id="auth-gate">
+    <div class="auth-card">
+      <div class="auth-icon">🔒</div>
+      <div class="auth-kicker">AREA RISERVATA // DARKROOM ARCHIVE</div>
+      <h2 class="auth-title">Autenticazione Amministratore</h2>
+      <p class="auth-sub">Inserisci la chiave di sicurezza per accedere al pannello curante e modificare l'archivio fotografico.</p>
+      
+      <form id="auth-form" class="auth-form" onsubmit="return false;">
+        <div class="auth-input-wrap">
+          <input 
+            type="password" 
+            id="auth-password" 
+            class="cms-input auth-input" 
+            placeholder="Password di accesso..." 
+            autocomplete="current-password"
+            required
+            autofocus 
+          />
+          <button type="submit" class="btn btn-primary auth-submit" id="btn-auth-submit">
+            <span>ENTRA →</span>
+          </button>
+        </div>
+        <div class="auth-error-msg" id="auth-error-msg" hidden>Password errata. Riprova.</div>
+      </form>
+      
+      <div class="auth-footer">
+        <a href="index.html" class="auth-back-link">← Torna al portfolio pubblico</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Load current manifest fallback for offline / file:// usage -->
   <script src="photos-data.js"></script>

@@ -29,6 +29,9 @@ JSON_DB_FILE = os.path.join(ROOT_DIR, "photos-db.json")
 BACKUP_DIR = os.path.join(ROOT_DIR, "backups")
 TRASH_DIR = os.path.join(ROOT_DIR, "backups", "trash_foto")
 
+ADMIN_PASSWORD = os.environ.get("NV_ADMIN_PASSWORD", "finefilo")
+VALID_SESSIONS = set()
+
 DEFAULT_CATEGORIES = ["NATURA", "PARTY", "SOGGETTI", "ANIMALI", "ASTRATTO"]
 FILM_STOCKS = [
     "KODAK TRI-X 400 // 35MM",
@@ -302,6 +305,14 @@ class DarkroomAdminHandler(SimpleHTTPRequestHandler):
         raw = self.rfile.read(length)
         return json.loads(raw.decode("utf-8"))
 
+    def check_auth(self):
+        auth_hdr = self.headers.get("Authorization", "")
+        if auth_hdr.startswith("Bearer "):
+            token = auth_hdr[7:].strip()
+            if token in VALID_SESSIONS:
+                return True
+        return False
+
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         if parsed.path == "/api/status":
@@ -313,6 +324,7 @@ class DarkroomAdminHandler(SimpleHTTPRequestHandler):
                     "totalPhotos": len(data.get("photos", [])),
                     "categories": data.get("categories", DEFAULT_CATEGORIES),
                     "workspace": ROOT_DIR,
+                    "authRequired": True,
                     "timestamp": datetime.now().isoformat(),
                 }
             )
@@ -327,6 +339,36 @@ class DarkroomAdminHandler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
+
+        # Login endpoint
+        if parsed.path == "/api/login":
+            try:
+                body = self.read_json_body()
+                pwd = body.get("password", "")
+                if pwd == ADMIN_PASSWORD:
+                    token = hashlib.sha256(f"{pwd}_{time.time()}_{os.getpid()}".encode()).hexdigest()
+                    VALID_SESSIONS.add(token)
+                    self.send_json({"ok": True, "token": token, "message": "Autenticazione riuscita."})
+                else:
+                    self.send_json({"ok": False, "error": "Password errata."}, 401)
+            except Exception as e:
+                self.send_json({"ok": False, "error": str(e)}, 500)
+            return
+
+        # Logout endpoint
+        if parsed.path == "/api/logout":
+            auth_hdr = self.headers.get("Authorization", "")
+            if auth_hdr.startswith("Bearer "):
+                token = auth_hdr[7:].strip()
+                VALID_SESSIONS.discard(token)
+            self.send_json({"ok": True, "message": "Disconnesso."})
+            return
+
+        # Protected administrative endpoints
+        if parsed.path in ["/api/photos", "/api/upload", "/api/rescan", "/api/delete-photo", "/api/git-sync"]:
+            if not self.check_auth():
+                self.send_json({"ok": False, "error": "Accesso non autorizzato. Effettua il login."}, 401)
+                return
 
         # Save entire manifest
         if parsed.path == "/api/photos":
