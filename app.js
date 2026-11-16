@@ -729,6 +729,55 @@
           panLoupeToCursor(e.clientX, e.clientY);
         }
       });
+
+      // Touch Swipe (prev/next) + Touch Pan (when zoomed) + Double-Tap Zoom
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let lastTapTime = 0;
+
+      dom.lbViewport.addEventListener(
+        "touchstart",
+        (e) => {
+          if (e.touches.length !== 1) return;
+          const touch = e.touches[0];
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+
+          const now = Date.now();
+          if (now - lastTapTime < 280) {
+            e.preventDefault();
+            toggleLoupeZoom(touch.clientX, touch.clientY);
+            lastTapTime = 0;
+            return;
+          }
+          lastTapTime = now;
+        },
+        { passive: false }
+      );
+
+      dom.lbViewport.addEventListener(
+        "touchmove",
+        (e) => {
+          if (state.zoomLevel > 1 && e.touches.length === 1) {
+            e.preventDefault();
+            panLoupeToCursor(e.touches[0].clientX, e.touches[0].clientY);
+          }
+        },
+        { passive: false }
+      );
+
+      dom.lbViewport.addEventListener("touchend", (e) => {
+        if (state.zoomLevel > 1 || e.changedTouches.length !== 1) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+          if (dx < 0) {
+            updateLightboxSlide(state.lightboxIndex + 1);
+          } else {
+            updateLightboxSlide(state.lightboxIndex - 1);
+          }
+        }
+      });
     }
 
     // 5. Keyboard Navigation for Lightbox (←, →, ESC, Z)

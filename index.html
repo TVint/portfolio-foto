@@ -2,7 +2,8 @@
 <html lang="it" data-theme="gallery">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F6F5F0" />
   <title>NICOLA VIANELLO — PHOTOGRAPHY MANIFESTO &amp; ARCHIVE</title>
   <meta name="description" content="Nicola Vianello — Photography Manifesto & Contact-Sheet Archive. Raw, analog, tactile visual archive." />
 
@@ -101,10 +102,13 @@
       </div>
     </nav>
 
-    <!-- DARKROOM / GALLERY MODE SWITCH -->
-    <div class="hud-navbar__right" style="display:flex; align-items:center; gap:10px;">
-      <a href="admin.html" class="darkroom-switch" title="Apri Darkroom Admin CMS" style="text-decoration:none;">
-        <span class="darkroom-switch__text">⚙ ADMIN CMS</span>
+    <!-- DARKROOM / GALLERY MODE SWITCH & PRINT -->
+    <div class="hud-navbar__right">
+      <button type="button" class="darkroom-switch hud-print-btn" id="print-archive-btn" onclick="window.print()" title="Stampa o Salva PDF Foglio di Contatto">
+        <span class="darkroom-switch__text">⎙ STAMPA</span>
+      </button>
+      <a href="admin.html" class="darkroom-switch hud-admin-link" title="Apri Darkroom Admin CMS">
+        <span class="darkroom-switch__text">⚙ ADMIN</span>
       </a>
       <button type="button" class="darkroom-switch" id="darkroom-toggle" aria-pressed="false" title="Commuta tra Gallery Paper e Darkroom Mode">
         <span class="darkroom-switch__indicator"></span>
